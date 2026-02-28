@@ -29,8 +29,8 @@ export default function Footer() {
                                 <FaHome className="text-primary-foreground text-sm" />
                             </div>
                             <span className="text-xl font-bold">
-                                <span className="text-primary">Posh</span>{" "}
-                                <span className="font-display italic">Stays</span>
+                                <span className="text-primary">UrbanLuxe</span>{" "}
+                                <span className="font-display italic">Holidays</span>
                             </span>
                         </Link>
                         <p className="text-sm text-muted-foreground leading-relaxed mb-6 max-w-xs">
@@ -64,7 +64,7 @@ export default function Footer() {
             <Separator className="bg-border" />
 
             <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
-                <p className="text-xs text-muted-foreground">© 2025 PoshStays. All rights reserved.</p>
+                <p className="text-xs text-muted-foreground">© 2025 UrbanLuxe Holidays. All rights reserved.</p>
                 <div className="flex gap-6">
                     {["Privacy", "Terms", "Sitemap"].map((l) => (
                         <a key={l} href="#" className="text-xs text-muted-foreground hover:text-primary transition-colors">{l}</a>

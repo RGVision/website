@@ -41,7 +41,7 @@ export default function OffersSection() {
                 <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/40 flex items-center px-10">
                     <div>
                         <h3 className="text-2xl font-bold font-display mb-2">List Your Property</h3>
-                        <p className="text-sm text-[var(--color-text-muted)] mb-4 max-w-md">Earn premium returns by listing your luxury property with PoshStays</p>
+                        <p className="text-sm text-[var(--color-text-muted)] mb-4 max-w-md">Earn premium returns by listing your luxury property with UrbanLuxe Holidays</p>
                         <button className="px-6 py-3 bg-gold-gradient rounded-full text-sm font-semibold text-[var(--color-bg-primary)] hover:shadow-gold transition-all duration-300">
                             Become a Host
                         </button>

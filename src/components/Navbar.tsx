@@ -32,8 +32,8 @@ export default function Navbar() {
                         <FaHome className="text-primary-foreground text-sm" />
                     </div>
                     <span className="text-xl font-bold tracking-tight">
-                        <span className="text-primary">Posh</span>{" "}
-                        <span className="font-display italic">Stays</span>
+                        <span className="text-primary">UrbanLuxe</span>{" "}
+                        <span className="font-display italic">Holidays</span>
                     </span>
                 </Link>
 
@@ -76,7 +76,7 @@ export default function Navbar() {
                                     <div className="w-8 h-8 rounded-lg bg-gold-gradient flex items-center justify-center">
                                         <FaHome className="text-primary-foreground text-sm" />
                                     </div>
-                                    <span><span className="text-primary">Posh</span> <span className="font-display italic">Stays</span></span>
+                                    <span><span className="text-primary">UrbanLuxe</span> <span className="font-display italic">Holidays</span></span>
                                 </SheetTitle>
                             </SheetHeader>
                             <Separator className="bg-border my-4" />
