@@ -1,5 +1,6 @@
 import VillaList from "@/components/villas/VillaList";
 import { getVillas } from "@/lib/db";
+import { Suspense } from "react";
 
 export const revalidate = 3600;
 
@@ -17,7 +18,9 @@ export default async function VillasPage() {
                 <p className="text-muted-foreground">{villas.length} handpicked properties across India</p>
             </div>
 
-            <VillaList villas={villas} locations={locations} />
+            <Suspense fallback={<div className="text-center py-20 text-muted-foreground italic">Loading our collections...</div>}>
+                <VillaList villas={villas} locations={locations} />
+            </Suspense>
         </div>
     );
 }
