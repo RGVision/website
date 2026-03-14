@@ -12,7 +12,7 @@ export default function ContactPage() {
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setStatus("loading");
-        
+
         const formData = new FormData(e.currentTarget);
         const data = {
             name: formData.get("name") as string,
@@ -79,10 +79,10 @@ export default function ContactPage() {
                                         </div>
                                         <div>
                                             <p className="text-sm text-muted-foreground mb-1 italic">Email Address</p>
-                                            <a href="mailto:hello@vorastays.com" className="text-xl font-medium hover:text-gold transition-colors tracking-wide">hello@vorastays.com</a>
+                                            <a href="mailto:vorastays@gmail.com" className="text-xl font-medium hover:text-gold transition-colors tracking-wide">vorastays@gmail.com</a>
                                         </div>
                                     </div>
-                                    <div className="flex items-start gap-4 group">
+                                    <div className="flex items-start gap-4 group hidden">
                                         <div className="w-12 h-12 rounded-2xl bg-gold/10 flex items-center justify-center border border-gold/20 group-hover:bg-gold/20 transition-all">
                                             <FaMapMarkerAlt className="text-gold" />
                                         </div>

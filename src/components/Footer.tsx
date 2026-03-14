@@ -51,8 +51,8 @@ export default function Footer() {
                             <ul className="flex flex-col gap-3">
                                 {col.links.map((link) => (
                                     <li key={link}>
-                                        <Link 
-                                            href={link === "Contact Us" ? "/contact" : "#"} 
+                                        <Link
+                                            href={link === "Contact Us" ? "/contact" : "#"}
                                             className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
                                         >
                                             {link}
@@ -70,7 +70,7 @@ export default function Footer() {
                             <p className="text-sm text-muted-foreground italic">
                                 For personalized selections and group bookings, speak to our luxury travel experts.
                             </p>
-                            <a href="tel:+916382221757" className="text-lg font-display text-gold hover:text-white transition-colors">
+                            <a href="tel:+916382221757" className="text-lg text-gold hover:text-white transition-colors">
                                 +91 63822 21757
                             </a>
                             <p className="text-[10px] uppercase tracking-tighter text-muted-foreground">Available 24/7 for you</p>
