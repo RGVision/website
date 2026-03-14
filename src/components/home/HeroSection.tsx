@@ -1,10 +1,11 @@
 "use client";
 import Link from "next/link";
 import { FaPlay } from "react-icons/fa";
+import SearchFilter from "./SearchFilter";
 
 export default function HeroSection() {
     return (
-        <section className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden">
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-20 lg:py-0">
             {/* Background */}
             <div className="absolute inset-0 z-0">
                 <img
@@ -24,22 +25,21 @@ export default function HeroSection() {
             </div>
 
             {/* Content */}
-            <div className="relative z-20 text-center max-w-4xl px-6">
-                <div className="inline-flex items-center gap-2 px-5 py-2 glass rounded-full mb-8 animate-fadeInUp">
-                    <span className="w-2 h-2 rounded-full bg-gold-gradient animate-pulse" />
-                    <span className="text-sm text-[var(--color-text-secondary)]">Premium Luxury Stays</span>
+            <div className="relative z-20 text-center max-w-4xl px-6 pt-10">
+                <div className="inline-flex items-center gap-3 px-6 py-2 glass rounded-full mb-6 md:mb-10 animate-fadeInUp border border-gold/20">
+                    <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
+                    <span className="text-[10px] md:text-xs tracking-[0.2em] uppercase text-gold font-medium">Trusted by 500+ Luxury Travelers</span>
                 </div>
 
-                <h1 className="font-display text-[length:var(--font-size-hero)] font-bold leading-[1.05] mb-6 animate-fadeInUp" style={{ animationDelay: "0.15s" }}>
-                    Experience{" "}
-                    <span className="text-gradient-gold italic">Luxury</span>{" "}
-                    Living
+                <h1 className="font-display text-4xl md:text-6xl lg:text-[length:var(--font-size-hero)] font-light leading-[1.1] mb-6 md:mb-8 animate-fadeInUp" style={{ animationDelay: "0.15s" }}>
+                    Elegance is <br />
+                    <span className="text-gradient-gold italic">Reimagined</span>
                 </h1>
 
-                <p className="text-lg text-[var(--color-text-secondary)] max-w-2xl mx-auto mb-10 animate-fadeInUp" style={{ animationDelay: "0.3s" }}>
-                    Discover handpicked villas, heritage havelis, and beachfront mansions across India&apos;s most stunning destinations.
+                <p className="text-base md:text-xl text-[var(--color-text-secondary)] max-w-2xl mx-auto mb-10 md:mb-12 animate-fadeInUp font-light tracking-wide leading-relaxed" style={{ animationDelay: "0.3s" }}>
+                    Experience the pinnacle of luxury with Vora Stays. Handpicked villas and heritage escapes designed for your ultimate relaxation.
                 </p>
-
+                {/* 
                 <div className="flex items-center justify-center gap-4 animate-fadeInUp" style={{ animationDelay: "0.45s" }}>
                     <Link href="/villas" className="px-8 py-4 bg-gold-gradient rounded-full font-semibold text-[var(--color-bg-primary)] hover:shadow-gold hover:-translate-y-0.5 transition-all duration-300">
                         Explore Villas
@@ -50,11 +50,26 @@ export default function HeroSection() {
                         </span>
                         Watch Tour
                     </button>
+                </div> */}
+
+                <div className="mt-8 w-full max-w-7xl mx-auto">
+                    <SearchFilter />
+                </div>
+
+                <div className="mt-8 flex flex-col items-center gap-3 animate-fadeInUp" style={{ animationDelay: "0.8s" }}>
+                    <p className="text-sm text-[var(--color-text-muted)] tracking-wide">
+                        For personal assistance & bespoke bookings
+                    </p>
+                    <a href="tel:+916382221757" className="group flex items-center gap-3 px-6 py-3 glass rounded-full hover:bg-gold/10 transition-all duration-300 border border-gold/10">
+                        <span className="text-gold font-medium tracking-widest">+91 63822 21757</span>
+                        <span className="w-1 h-1 rounded-full bg-gold/50 group-hover:scale-150 transition-transform" />
+                        <span className="text-xs uppercase text-gold/80 font-semibold tracking-tighter">Enquire Now</span>
+                    </a>
                 </div>
             </div>
 
             {/* Bottom Stats Bar */}
-            <div className="absolute bottom-0 left-0 right-0 z-20">
+            {/* <div className="absolute bottom-0 left-0 right-0 z-20">
                 <div className="max-w-5xl mx-auto px-6 pb-8">
                     <div className="glass rounded-2xl py-6 px-8 flex items-center justify-center gap-12 md:gap-20">
                         {[
@@ -69,7 +84,7 @@ export default function HeroSection() {
                         ))}
                     </div>
                 </div>
-            </div>
+            </div> */}
         </section>
     );
 }

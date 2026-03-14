@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import VillaCard from "@/components/shared/VillaCard";
 import { Villa } from "@/data/villas";
 import { FaSearch, FaFilter } from "react-icons/fa";
@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent } from "@/components/ui/card";
+import { useSearchParams } from "next/navigation";
 
 interface VillaListProps {
     villas: Villa[];
@@ -15,11 +16,32 @@ interface VillaListProps {
 }
 
 export default function VillaList({ villas, locations }: VillaListProps) {
+    const searchParams = useSearchParams();
+    
     const [search, setSearch] = useState("");
-    const [selectedLocation, setSelectedLocation] = useState("all");
+    const [selectedLocation, setSelectedLocation] = useState(() => {
+        const loc = searchParams.get("location");
+        if (loc) {
+            const match = locations.find(l => l.toLowerCase().includes(loc.toLowerCase()));
+            return match || loc;
+        }
+        return "all";
+    });
     const [priceRange, setPriceRange] = useState("all");
     const [sortBy, setSortBy] = useState("featured");
-    const [showFilters, setShowFilters] = useState(false);
+    const [showFilters, setShowFilters] = useState(!!searchParams.get("location"));
+    const [guestCount, setGuestCount] = useState(searchParams.get("guests") || "1");
+
+    useEffect(() => {
+        const loc = searchParams.get("location");
+        if (loc) {
+            const match = locations.find(l => l.toLowerCase().includes(loc.toLowerCase()));
+            setSelectedLocation(match || loc);
+            setShowFilters(true);
+        }
+        const g = searchParams.get("guests");
+        if (g) setGuestCount(g);
+    }, [searchParams, locations]);
 
     const filteredVillas = useMemo(() => {
         let result = [...villas];
@@ -27,11 +49,20 @@ export default function VillaList({ villas, locations }: VillaListProps) {
             const q = search.toLowerCase();
             result = result.filter((v) => v.name.toLowerCase().includes(q) || v.location.toLowerCase().includes(q));
         }
-        if (selectedLocation !== "all") result = result.filter((v) => v.location === selectedLocation);
+        
+        if (selectedLocation !== "all") {
+            result = result.filter((v) => v.location.toLowerCase().includes(selectedLocation.toLowerCase()));
+        }
+
+        if (guestCount !== "any") {
+            result = result.filter((v) => v.maxGuests >= parseInt(guestCount));
+        }
+
         if (priceRange !== "all") {
             const [min, max] = priceRange.split("-").map(Number);
             result = result.filter((v) => v.price >= min && v.price <= (max || Infinity));
         }
+        
         switch (sortBy) {
             case "price-low": result.sort((a, b) => a.price - b.price); break;
             case "price-high": result.sort((a, b) => b.price - a.price); break;
@@ -39,7 +70,7 @@ export default function VillaList({ villas, locations }: VillaListProps) {
             default: result.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
         }
         return result;
-    }, [villas, search, selectedLocation, priceRange, sortBy]);
+    }, [villas, search, selectedLocation, priceRange, sortBy, guestCount]);
 
     return (
         <div>
@@ -90,6 +121,20 @@ export default function VillaList({ villas, locations }: VillaListProps) {
                                     <SelectItem value="8000-15000">₹8,000 - ₹15,000</SelectItem>
                                     <SelectItem value="15000-25000">₹15,000 - ₹25,000</SelectItem>
                                     <SelectItem value="25000-1000000">₹25,000+</SelectItem>
+                                </SelectContent>
+                            </Select>
+                        </div>
+                        <div className="flex-1">
+                            <label className="text-xs uppercase tracking-widest text-muted-foreground font-semibold mb-2 block">Guests</label>
+                            <Select value={guestCount} onValueChange={setGuestCount}>
+                                <SelectTrigger className="h-11 bg-white/[0.04] border-border text-foreground focus:ring-primary/50">
+                                    <SelectValue placeholder="Any Guests" />
+                                </SelectTrigger>
+                                <SelectContent className="bg-[var(--color-bg-secondary)] border-border">
+                                    <SelectItem value="any">Any Guests</SelectItem>
+                                    {[1, 2, 3, 4, 5, 6, 8, 10, 12, 16].map((num) => (
+                                        <SelectItem key={num} value={num.toString()}>{num}+ Guests</SelectItem>
+                                    ))}
                                 </SelectContent>
                             </Select>
                         </div>

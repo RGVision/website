@@ -19,8 +19,7 @@ export default function Navbar() {
     const links = [
         { href: "/", label: "Home" },
         { href: "/villas", label: "Villas" },
-        { href: "/villas?category=farmhouse", label: "Farmhouses" },
-        { href: "/villas?category=apartment", label: "Apartments" },
+        { href: "/contact", label: "Contact Us" },
     ];
 
     return (
@@ -28,12 +27,11 @@ export default function Navbar() {
             <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-[72px]">
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-3 group">
-                    <div className="w-9 h-9 rounded-lg bg-gold-gradient flex items-center justify-center group-hover:shadow-gold transition-shadow duration-300">
-                        <FaHome className="text-primary-foreground text-sm" />
+                    <div className="w-10 h-10 rounded-full overflow-hidden border border-gold/30 group-hover:border-gold transition-all duration-300">
+                        <img src="/logo.jpeg" alt="Vora Stays" className="w-full h-full object-cover" />
                     </div>
-                    <span className="text-xl font-bold tracking-tight">
-                        <span className="text-primary">UrbanLuxe</span>{" "}
-                        <span className="font-display italic">Holidays</span>
+                    <span className="text-2xl font-light tracking-widest uppercase">
+                        Vora <span className="font-display italic lowercase text-gold">Stays</span>
                     </span>
                 </Link>
 
@@ -52,13 +50,13 @@ export default function Navbar() {
 
                 {/* Actions */}
                 <div className="flex items-center gap-3">
-                    <div className="hidden md:flex items-center gap-2 px-4 py-2.5 glass rounded-full">
+                    {/* <div className="hidden md:flex items-center gap-2 px-4 py-2.5 glass rounded-full">
                         <FaSearch className="text-xs text-muted-foreground" />
                         <Input
                             placeholder="Search destinations..."
                             className="border-0 bg-transparent text-sm h-auto p-0 focus-visible:ring-0 placeholder:text-muted-foreground w-40"
                         />
-                    </div>
+                    </div> */}
                     <Button asChild className="hidden md:flex bg-gold-gradient hover:shadow-gold rounded-full text-primary-foreground font-semibold hover:-translate-y-0.5 transition-all duration-300 border-0">
                         <Link href="/villas">Book Now</Link>
                     </Button>
@@ -73,10 +71,10 @@ export default function Navbar() {
                         <SheetContent side="right" className="bg-background border-border w-[300px]">
                             <SheetHeader>
                                 <SheetTitle className="flex items-center gap-3">
-                                    <div className="w-8 h-8 rounded-lg bg-gold-gradient flex items-center justify-center">
-                                        <FaHome className="text-primary-foreground text-sm" />
+                                    <div className="w-8 h-8 rounded-full overflow-hidden border border-gold/30">
+                                        <img src="/logo.jpeg" alt="Vora Stays" className="w-full h-full object-cover" />
                                     </div>
-                                    <span><span className="text-primary">UrbanLuxe</span> <span className="font-display italic">Holidays</span></span>
+                                    <span className="text-xl font-light tracking-wider uppercase">Vora <span className="font-display italic lowercase text-gold">Stays</span></span>
                                 </SheetTitle>
                             </SheetHeader>
                             <Separator className="bg-border my-4" />
