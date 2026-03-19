@@ -30,18 +30,17 @@ export default function HeroSection() {
 
             {/* Content */}
             <div className="relative z-20 text-center max-w-4xl px-6 pt-10">
-                <div className="inline-flex items-center gap-3 px-6 py-2 bg-black/40 backdrop-blur-md rounded-full mb-6 md:mb-10 animate-fadeInUp border border-gold/30">
-                    <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse shadow-[0_0_8px_rgba(201,165,92,0.8)]" />
-                    <span className="text-[10px] md:text-xs tracking-[0.25em] uppercase text-gold font-bold drop-shadow-sm">Trusted by 500+ Luxury Travelers</span>
+                <div className="inline-flex items-center gap-4 px-6 py-2 bg-black/60 backdrop-blur-2xl rounded-full mb-10 md:mb-16 animate-fadeInUp border border-gold/40 shadow-2xl">
+                    <span className="text-[10px] md:text-xs tracking-[0.4em] uppercase text-gold/90 font-bold drop-shadow-sm">Bespoke Journeys • Exceptional Stays</span>
                 </div>
 
-                <h1 className="font-display text-4xl md:text-6xl lg:text-[length:var(--font-size-hero)] font-light leading-[1.1] mb-6 md:mb-8 animate-fadeInUp drop-shadow-2xl" style={{ animationDelay: "0.15s" }}>
-                    Elegance is <br />
-                    <span className="text-gradient-gold italic font-medium">Reimagined</span>
+                <h1 className="font-display text-4xl md:text-7xl lg:text-[length:var(--font-size-hero)] font-light leading-[1.05] mb-8 md:mb-12 animate-fadeInUp drop-shadow-2xl" style={{ animationDelay: "0.15s" }}>
+                    Exclusivity Meets <br />
+                    <span className="text-gradient-gold italic font-medium">Timeless Elegance</span>
                 </h1>
 
                 <p className="text-base md:text-xl text-white/90 max-w-2xl mx-auto mb-10 md:mb-12 animate-fadeInUp font-light tracking-wide leading-relaxed drop-shadow-md" style={{ animationDelay: "0.3s" }}>
-                    Experience the pinnacle of luxury with Vora Stays. Handpicked villas and heritage escapes designed for your ultimate relaxation.
+                    Experience the art of exclusive travel with Vora Stays. Curated luxury villas and heritage escapes across India, redefining luxury travel with unparalleled privacy and elegance.
                 </p>
                 {/* 
                 <div className="flex items-center justify-center gap-4 animate-fadeInUp" style={{ animationDelay: "0.45s" }}>

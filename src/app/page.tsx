@@ -7,6 +7,12 @@ import OffersSection from "@/components/home/OffersSection";
 import InspirationCarousel from "@/components/home/InspirationCarousel";
 import HomeDiscovery from "@/components/home/HomeDiscovery";
 import { getVillas, getCategories, getExperiences, getStats, getTestimonials } from "@/lib/db";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: "Vora Stays – Where Exclusivity Meets Timeless Elegance",
+    description: "Experience the art of exclusive travel with Vora Stays. Curated luxury villas and heritage escapes across India, redefining luxury travel with unparalleled privacy and elegance.",
+};
 
 export default async function HomePage() {
     const [categories, allVillas, experiences, stats, testimonials] = await Promise.all([
