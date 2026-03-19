@@ -20,6 +20,14 @@ export default async function HomePage() {
     const featuredVillas = allVillas.filter(v => v.featured);
     const beachVillas = allVillas.filter(v => v.category === "beachfront");
 
+    // Dynamic Stats Calculation
+    const dynamicStats = [
+        { number: allVillas.length, suffix: "+", label: "Premium Properties" },
+        { number: new Set(allVillas.map(v => v.location)).size, suffix: "+", label: "Destinations" },
+        { number: 24, suffix: "x7", label: "Concierge Support" },
+        { number: 5000, suffix: "+", label: "Happy Guests" },
+    ];
+
     return (
         <div className="overflow-hidden">
             <HeroSection />
@@ -34,7 +42,7 @@ export default async function HomePage() {
                 <ExperiencesSection experiences={experiences} />
                 <StoryGallery />
                 <OffersSection />
-                <StatsSection stats={stats} />
+                <StatsSection stats={dynamicStats} />
                 <InspirationCarousel testimonials={testimonials} />
             </div>
         </div>

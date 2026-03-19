@@ -9,34 +9,38 @@ export default function HeroSection() {
             {/* Background */}
             <div className="absolute inset-0 z-0">
                 <img
-                    src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1600&q=80"
+                    src="/premium_hero_villa_1_1773935436305.png"
                     alt="Luxury Villa"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover scale-105 animate-slow-zoom"
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-bg-primary)]/60 via-[var(--color-bg-primary)]/40 to-[var(--color-bg-primary)]" />
+                {/* Enhanced Gradient Overlay for Readability */}
+                <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-bg-primary)]/80 via-[var(--color-bg-primary)]/40 to-[var(--color-bg-primary)]" />
+                <div className="absolute inset-0 bg-black/30" /> {/* Extra darkening for text contrast */}
             </div>
 
             {/* Floating Cards */}
-            <div className="absolute top-[20%] right-[8%] w-48 h-32 rounded-xl overflow-hidden shadow-2xl shadow-black/40 rotate-6 animate-float hidden lg:block z-10 border border-white/10">
-                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=400&q=80" alt="" className="w-full h-full object-cover" />
+            <div className="absolute top-[20%] right-[8%] w-56 h-36 rounded-2xl overflow-hidden shadow-2xl shadow-black/60 rotate-6 animate-float hidden lg:block z-10 border border-white/20 backdrop-blur-sm">
+                <img src="/premium_villa_card_1_1773935455534.png" alt="" className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
             </div>
-            <div className="absolute bottom-[25%] left-[5%] w-40 h-28 rounded-xl overflow-hidden shadow-2xl shadow-black/40 -rotate-6 animate-float hidden lg:block z-10 border border-white/10" style={{ animationDelay: "2s" }}>
-                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80" alt="" className="w-full h-full object-cover" />
+            <div className="absolute bottom-[25%] left-[5%] w-48 h-32 rounded-2xl overflow-hidden shadow-2xl shadow-black/60 -rotate-6 animate-float hidden lg:block z-10 border border-white/20 backdrop-blur-sm" style={{ animationDelay: "2s" }}>
+                <img src="/premium_villa_card_2_1773935474784.png" alt="" className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
             </div>
 
             {/* Content */}
             <div className="relative z-20 text-center max-w-4xl px-6 pt-10">
-                <div className="inline-flex items-center gap-3 px-6 py-2 glass rounded-full mb-6 md:mb-10 animate-fadeInUp border border-gold/20">
-                    <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
-                    <span className="text-[10px] md:text-xs tracking-[0.2em] uppercase text-gold font-medium">Trusted by 500+ Luxury Travelers</span>
+                <div className="inline-flex items-center gap-3 px-6 py-2 bg-black/40 backdrop-blur-md rounded-full mb-6 md:mb-10 animate-fadeInUp border border-gold/30">
+                    <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse shadow-[0_0_8px_rgba(201,165,92,0.8)]" />
+                    <span className="text-[10px] md:text-xs tracking-[0.25em] uppercase text-gold font-bold drop-shadow-sm">Trusted by 500+ Luxury Travelers</span>
                 </div>
 
-                <h1 className="font-display text-4xl md:text-6xl lg:text-[length:var(--font-size-hero)] font-light leading-[1.1] mb-6 md:mb-8 animate-fadeInUp" style={{ animationDelay: "0.15s" }}>
+                <h1 className="font-display text-4xl md:text-6xl lg:text-[length:var(--font-size-hero)] font-light leading-[1.1] mb-6 md:mb-8 animate-fadeInUp drop-shadow-2xl" style={{ animationDelay: "0.15s" }}>
                     Elegance is <br />
-                    <span className="text-gradient-gold italic">Reimagined</span>
+                    <span className="text-gradient-gold italic font-medium">Reimagined</span>
                 </h1>
 
-                <p className="text-base md:text-xl text-[var(--color-text-secondary)] max-w-2xl mx-auto mb-10 md:mb-12 animate-fadeInUp font-light tracking-wide leading-relaxed" style={{ animationDelay: "0.3s" }}>
+                <p className="text-base md:text-xl text-white/90 max-w-2xl mx-auto mb-10 md:mb-12 animate-fadeInUp font-light tracking-wide leading-relaxed drop-shadow-md" style={{ animationDelay: "0.3s" }}>
                     Experience the pinnacle of luxury with Vora Stays. Handpicked villas and heritage escapes designed for your ultimate relaxation.
                 </p>
                 {/* 

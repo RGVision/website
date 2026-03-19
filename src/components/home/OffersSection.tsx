@@ -42,9 +42,16 @@ export default function OffersSection() {
                     <div>
                         <h3 className="text-2xl font-bold font-display mb-2">List Your Property</h3>
                         <p className="text-sm text-[var(--color-text-muted)] mb-4 max-w-md italic">Earn premium returns by listing your luxury property with Vora Stays</p>
-                        <button className="px-6 py-3 bg-gold-gradient rounded-full text-sm font-semibold text-[var(--color-bg-primary)] hover:shadow-gold transition-all duration-300">
-                            Become a Host
-                        </button>
+                        <a 
+                            href="https://wa.me/916382221757?text=Hi%20Vora%20Stays%2c%20I%27m%20interested%20in%20listing%20my%20property%20with%20you%20for%20collaboration."
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-block"
+                        >
+                            <button className="px-6 py-3 bg-gold-gradient rounded-full text-sm font-semibold text-[var(--color-bg-primary)] hover:shadow-gold transition-all duration-300">
+                                Become a Host
+                            </button>
+                        </a>
                     </div>
                 </div>
             </div>

@@ -51,7 +51,13 @@ export default function Footer() {
                                 {col.links.map((link) => (
                                     <li key={link}>
                                         <Link
-                                            href={link === "Contact Us" ? "/contact" : (link === "About Us" ? "/about" : "#")}
+                                            href={
+                                                link === "Contact Us" ? "/contact" : 
+                                                link === "About Us" ? "/about" : 
+                                                link === "List Your Property" ? "https://wa.me/916382221757?text=Hi%20Vora%20Stays%2c%20I%27m%20interested%20in%20listing%20my%20property%20with%20you%20for%20collaboration." :
+                                                "#"
+                                            }
+                                            target={link === "List Your Property" ? "_blank" : undefined}
                                             className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
                                         >
                                             {link}
@@ -84,7 +90,13 @@ export default function Footer() {
                 <p className="text-xs text-muted-foreground">© 2025 Vora Stays. All rights reserved.</p>
                 <div className="flex gap-6">
                     {["Privacy", "Terms", "Sitemap"].map((l) => (
-                        <a key={l} href="#" className="text-xs text-muted-foreground hover:text-primary transition-colors">{l}</a>
+                        <a 
+                            key={l} 
+                            href={l === "Sitemap" ? "/sitemap.xml" : "#"} 
+                            className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                        >
+                            {l}
+                        </a>
                     ))}
                 </div>
             </div>
