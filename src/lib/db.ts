@@ -157,7 +157,7 @@ export async function getExperiences(): Promise<any[]> {
     }
 }
 
-export async function getStats(): Promise<any[]> {
+export async function getStats(): Promise<any[] | null> {
     try {
         const { data, error } = await adminSupabase
             .from('stats')
@@ -166,18 +166,18 @@ export async function getStats(): Promise<any[]> {
 
         if (error) {
             console.warn('⚠️ Supabase Stats Fetch Error:', error.message);
-            return localStats;
+            return null;
         }
 
         if (!data || data.length === 0) {
-            console.log('ℹ️ No stats found in DB, using local static data.');
-            return localStats;
+            console.log('ℹ️ No stats found in DB.');
+            return null;
         }
 
         return data;
     } catch (err) {
         console.error('❌ Critical Catch in getStats:', err);
-        return localStats;
+        return null;
     }
 }
 

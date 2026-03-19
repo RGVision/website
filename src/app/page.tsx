@@ -20,13 +20,16 @@ export default async function HomePage() {
     const featuredVillas = allVillas.filter(v => v.featured);
     const beachVillas = allVillas.filter(v => v.category === "beachfront");
 
-    // Dynamic Stats Calculation
+    // Dynamic Stats Calculation (Automated)
     const dynamicStats = [
         { number: allVillas.length, suffix: "+", label: "Premium Properties" },
         { number: new Set(allVillas.map(v => v.location)).size, suffix: "+", label: "Destinations" },
         { number: 24, suffix: "x7", label: "Concierge Support" },
         { number: 5000, suffix: "+", label: "Happy Guests" },
     ];
+
+    // Priority: DB Stats -> Automated Dynamic Stats
+    const displayStats = stats && stats.length > 0 ? stats : dynamicStats;
 
     return (
         <div className="overflow-hidden">
@@ -42,7 +45,7 @@ export default async function HomePage() {
                 <ExperiencesSection experiences={experiences} />
                 <StoryGallery />
                 <OffersSection />
-                <StatsSection stats={dynamicStats} />
+                <StatsSection stats={displayStats} />
                 <InspirationCarousel testimonials={testimonials} />
             </div>
         </div>
