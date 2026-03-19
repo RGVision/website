@@ -31,6 +31,7 @@ export const categories: Category[] = [
     { id: "countryside", label: "Countryside Escapes", icon: "FaMountain" },
     { id: "forest", label: "Forest Retreats", icon: "FaTree" },
     { id: "farmhouse", label: "Farmhouses", icon: "FaHome" },
+    { id: "beachfront", label: "Beachfront Collection", icon: "FaUmbrellaBeach" },
     { id: "apartment", label: "Premium Apartments", icon: "FaBuilding" },
 ];
 

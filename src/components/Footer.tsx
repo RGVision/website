@@ -4,11 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
 const socials = [
-    { icon: FaInstagram, href: "#", label: "Instagram" },
-    { icon: FaFacebook, href: "#", label: "Facebook" },
-    { icon: FaTwitter, href: "#", label: "Twitter" },
-    { icon: FaYoutube, href: "#", label: "YouTube" },
-    { icon: FaLinkedin, href: "#", label: "LinkedIn" },
+    { icon: FaInstagram, href: "https://www.instagram.com/vorastays?igsh=Z21pdXZ5MjdsanN0", label: "Instagram" },
+    { icon: FaFacebook, href: "https://www.facebook.com/share/1CRsmzK7hV/?mibextid=wwXIfr", label: "Facebook" },
+    { icon: FaTwitter, href: "https://x.com/vorastays?s=21", label: "Twitter" },
+    { icon: FaLinkedin, href: "https://www.linkedin.com/company/vora-stays/", label: "LinkedIn" },
 ];
 
 const columns = [
@@ -52,7 +51,7 @@ export default function Footer() {
                                 {col.links.map((link) => (
                                     <li key={link}>
                                         <Link
-                                            href={link === "Contact Us" ? "/contact" : "#"}
+                                            href={link === "Contact Us" ? "/contact" : (link === "About Us" ? "/about" : "#")}
                                             className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
                                         >
                                             {link}

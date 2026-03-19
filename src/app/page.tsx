@@ -21,7 +21,7 @@ export default async function HomePage() {
     ]);
 
     const featuredVillas = allVillas.filter(v => v.featured);
-    const forestVillas = allVillas.filter(v => v.category === "forest" || v.category === "countryside");
+    const beachVillas = allVillas.filter(v => v.category === "beachfront");
 
     return (
         <div className="overflow-hidden">
@@ -33,7 +33,7 @@ export default async function HomePage() {
                     initialVillas={allVillas}
                 />
 
-                <LocationSection title="Best Forest & Countryside Villas" villas={forestVillas} />
+                <LocationSection title="Best Beach Villas" villas={beachVillas} />
                 <ExperiencesSection experiences={experiences} />
                 <StoryGallery />
                 <OffersSection />

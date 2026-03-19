@@ -38,12 +38,11 @@ const SearchFilter = () => {
                 <SelectValue placeholder="Where to go?" />
               </SelectTrigger>
               <SelectContent className="bg-black/95 backdrop-blur-xl border-white/10 text-white">
-                <SelectItem value="goa">Goa</SelectItem>
-                <SelectItem value="coorg">Coorg</SelectItem>
-                <SelectItem value="udaipur">Udaipur</SelectItem>
-                <SelectItem value="shimla">Shimla</SelectItem>
-                <SelectItem value="alibaug">Alibaug</SelectItem>
-                <SelectItem value="mumbai">Mumbai</SelectItem>
+                <SelectItem value="kovalam">Kovalam</SelectItem>
+                <SelectItem value="mahabalipuram">Mahabalipuram</SelectItem>
+                <SelectItem value="nemili">Nemili</SelectItem>
+                <SelectItem value="ecr">ECR</SelectItem>
+                <SelectItem value="lonavala">Lonavala</SelectItem>
               </SelectContent>
             </Select>
           </div>
@@ -92,9 +91,9 @@ const SearchFilter = () => {
                 <SelectValue placeholder="Guests" />
               </SelectTrigger>
               <SelectContent className="bg-black/95 backdrop-blur-xl border-white/10 text-white">
-                {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
+                {[1, 2, 3, 4, 5, 6, 7, 8, 10, 12, 15, 20, 25, 30, 50].map((num) => (
                   <SelectItem key={num} value={num.toString()}>
-                    {num} {num === 1 ? 'Guest' : 'Guests'}
+                    {num}{num >= 15 ? '+' : ''} {num === 1 ? 'Guest' : 'Guests'}
                   </SelectItem>
                 ))}
               </SelectContent>

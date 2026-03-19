@@ -7,7 +7,8 @@ export default auth((req) => {
 
     // Hidden Routing: If not authenticated and trying to access /admin, return 404
     if (isAdminRoute && !isAuth && req.nextUrl.pathname !== "/admin/login") {
-        return new NextResponse(null, { status: 404 });
+        const loginUrl = new URL("/admin/login", req.nextUrl.origin);
+        return NextResponse.redirect(loginUrl);
     }
 
     return NextResponse.next();
