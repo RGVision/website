@@ -33,26 +33,43 @@ export async function uploadImage(formData: FormData, bucketName: string = 'vill
     const file = formData.get('file') as File;
     if (!file) throw new Error('No file provided');
 
+    const urls = await uploadImagesInternal([file], bucketName);
+    return urls[0];
+}
+
+export async function uploadImages(formData: FormData, bucketName: string = 'villas') {
+    const files = formData.getAll('files') as File[];
+    if (!files || files.length === 0) throw new Error('No files provided');
+
+    return await uploadImagesInternal(files, bucketName);
+}
+
+async function uploadImagesInternal(files: File[], bucketName: string) {
     await ensureBucketExists(bucketName);
     
-    const fileExt = file.name.split('.').pop();
-    const fileName = `${Math.random().toString(36).substring(2)}-${Date.now()}.${fileExt}`;
-    const filePath = `${fileName}`;
+    const uploadPromises = files.map(async (file) => {
+        const fileExt = file.name.split('.').pop();
+        const fileName = `${Math.random().toString(36).substring(2)}-${Date.now()}.${fileExt}`;
+        const filePath = `${fileName}`;
 
-    const { data, error } = await adminSupabase.storage
-        .from(bucketName)
-        .upload(filePath, file, {
-            upsert: false,
-            contentType: file.type
-        });
+        const { error } = await adminSupabase.storage
+            .from(bucketName)
+            .upload(filePath, file, {
+                upsert: false,
+                contentType: file.type
+            });
 
-    if (error) {
-        throw error;
-    }
+        if (error) {
+            console.error(`Error uploading ${file.name}:`, error);
+            throw error;
+        }
 
-    const { data: { publicUrl } } = adminSupabase.storage
-        .from(bucketName)
-        .getPublicUrl(filePath);
+        const { data: { publicUrl } } = adminSupabase.storage
+            .from(bucketName)
+            .getPublicUrl(filePath);
 
-    return publicUrl;
+        return publicUrl;
+    });
+
+    return await Promise.all(uploadPromises);
 }

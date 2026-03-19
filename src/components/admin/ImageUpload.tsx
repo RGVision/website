@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Upload, X, Image as ImageIcon, Loader2 } from "lucide-react";
-import { uploadImage } from "@/lib/storage"; // This will be used in a server action or client-side if allowed
+import { uploadImages } from "@/lib/storage";
 
 interface ImageUploadProps {
     onImagesChange: (urls: string[]) => void;
@@ -20,15 +20,14 @@ export default function ImageUpload({ onImagesChange, initialImages = [] }: Imag
         if (!files || files.length === 0) return;
 
         setUploading(true);
-        const newUrls: string[] = [];
 
         try {
+            const formData = new FormData();
             for (let i = 0; i < files.length; i++) {
-                const formData = new FormData();
-                formData.append('file', files[i]);
-                const url = await uploadImage(formData);
-                newUrls.push(url);
+                formData.append('files', files[i]);
             }
+            
+            const newUrls = await uploadImages(formData);
             const updatedImages = [...images, ...newUrls];
             setImages(updatedImages);
             onImagesChange(updatedImages);
