@@ -8,9 +8,6 @@ import InspirationCarousel from "@/components/home/InspirationCarousel";
 import HomeDiscovery from "@/components/home/HomeDiscovery";
 import { getVillas, getCategories, getExperiences, getStats, getTestimonials } from "@/lib/db";
 
-// ISR: Revalidate every hour
-export const revalidate = 3600;
-
 export default async function HomePage() {
     const [categories, allVillas, experiences, stats, testimonials] = await Promise.all([
         getCategories(),

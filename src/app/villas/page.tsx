@@ -2,8 +2,6 @@ import VillaList from "@/components/villas/VillaList";
 import { getVillas } from "@/lib/db";
 import { Suspense } from "react";
 
-export const revalidate = 3600;
-
 export default async function VillasPage() {
     const villas = await getVillas();
     const locations = Array.from(new Set(villas.map((v) => v.location)));

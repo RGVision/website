@@ -2,8 +2,6 @@ import VillaDetails from "@/components/villas/VillaDetails";
 import { getVillaBySlug, getVillas } from "@/lib/db";
 import { notFound } from "next/navigation";
 
-export const revalidate = 3600;
-
 export async function generateStaticParams() {
     const villas = await getVillas();
     return villas.map((villa) => ({
