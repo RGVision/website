@@ -20,6 +20,7 @@ export default function VillasClient({ villas, categories }: { villas: any[], ca
                 </CardHeader>
                 <CardContent>
                     <VillaForm 
+                        key={editingVilla?.slug || "new"}
                         categories={categories} 
                         initialData={editingVilla} 
                         onCancel={() => setEditingVilla(null)} 

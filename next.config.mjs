@@ -16,7 +16,16 @@ const nextConfig = {
         protocol: "https",
         hostname: "res.cloudinary.com",
       },
+      {
+        protocol: "https",
+        hostname: "*.supabase.co",
+      },
     ],
+  },
+  experimental: {
+    serverActions: {
+      bodySizeLimit: '1000mb',
+    },
   },
 };
 
