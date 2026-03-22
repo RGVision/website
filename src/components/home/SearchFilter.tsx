@@ -42,7 +42,6 @@ const SearchFilter = () => {
                 <SelectItem value="mahabalipuram">Mahabalipuram</SelectItem>
                 <SelectItem value="nemili">Nemili</SelectItem>
                 <SelectItem value="ecr">ECR</SelectItem>
-                <SelectItem value="lonavala">Lonavala</SelectItem>
               </SelectContent>
             </Select>
           </div>

@@ -34,13 +34,16 @@ export const metadata: Metadata = {
         description: "Curated luxury villas and heritage escapes across India.",
         images: ["/premium_hero_villa_1_1773935436305.png"],
     },
+    icons: {
+        icon: "/square_logo.png",
+        apple: "/square_logo.png",
+    },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="en">
             <head>
-                <link rel="icon" href="/logo.jpeg" />
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
                 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
