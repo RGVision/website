@@ -21,36 +21,36 @@ function Calendar({
       classNames={{
         months: "flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0",
         month: "space-y-4",
-        month_caption: "flex justify-center pt-1 relative items-center h-9",
-        caption_label: "text-sm font-medium text-navy",
+        month_caption: "flex justify-center pt-2 relative items-center h-10",
+        caption_label: "text-base font-bold text-navy tracking-tight",
         nav: "flex items-center",
         button_previous: cn(
-          buttonVariants({ variant: "outline" }),
-          "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100 absolute left-1"
+          buttonVariants({ variant: "ghost" }),
+          "h-8 w-8 bg-transparent p-0 opacity-50 hover:opacity-100 absolute left-2 rounded-full border border-border"
         ),
         button_next: cn(
-          buttonVariants({ variant: "outline" }),
-          "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100 absolute right-1"
+          buttonVariants({ variant: "ghost" }),
+          "h-8 w-8 bg-transparent p-0 opacity-50 hover:opacity-100 absolute right-2 rounded-full border border-border"
         ),
-        month_grid: "w-full border-collapse space-y-1",
-        weekdays: "flex",
-        weekday: "text-navy/40 rounded-md w-9 font-medium text-[0.8rem] uppercase tracking-tighter text-center",
-        week: "flex w-full mt-2",
-        day: "h-9 w-9 text-center text-sm p-0 relative [&:has([aria-selected].day-range-end)]:rounded-r-md [&:has([aria-selected].day-outside)]:bg-accent/50 [&:has([aria-selected])]:bg-accent first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md focus-within:relative focus-within:z-20",
+        month_grid: "w-full border-collapse space-y-1 mt-4",
+        weekdays: "flex justify-between",
+        weekday: "text-navy/30 rounded-md w-10 font-black text-[0.7rem] uppercase tracking-widest text-center",
+        week: "flex w-full mt-1.5 justify-between",
+        day: "h-10 w-10 text-center text-sm p-0 relative [&:has([aria-selected].day-range-end)]:rounded-r-xl [&:has([aria-selected].day-outside)]:bg-saffron/20 [&:has([aria-selected])]:bg-saffron/10 first:[&:has([aria-selected])]:rounded-l-xl last:[&:has([aria-selected])]:rounded-r-xl focus-within:relative focus-within:z-20",
         day_button: cn(
           buttonVariants({ variant: "ghost" }),
-          "h-9 w-9 p-0 font-normal aria-selected:opacity-100 transition-none"
+          "h-10 w-10 p-0 font-semibold aria-selected:opacity-100 transition-all duration-300 rounded-xl"
         ),
-        range_start: "day-range-start bg-navy text-white rounded-l-md",
-        range_end: "day-range-end bg-navy text-white rounded-r-md",
+        range_start: "day-range-start bg-saffron text-white rounded-l-xl shadow-lg shadow-saffron/40",
+        range_end: "day-range-end bg-saffron text-white rounded-r-xl shadow-lg shadow-saffron/40",
         selected:
-          "bg-navy text-white hover:bg-navy hover:text-white focus:bg-navy focus:text-white",
-        today: "bg-accent text-accent-foreground",
+          "bg-saffron text-white hover:bg-saffron hover:text-white focus:bg-saffron focus:text-white",
+        today: "bg-secondary text-navy font-black",
         outside:
-          "day-outside text-muted-foreground opacity-50 aria-selected:bg-accent/50 aria-selected:text-muted-foreground aria-selected:opacity-30",
-        disabled: "text-muted-foreground opacity-50",
+          "day-outside text-muted-foreground opacity-20 aria-selected:bg-saffron/20 aria-selected:text-muted-foreground aria-selected:opacity-30",
+        disabled: "text-muted-foreground opacity-20",
         range_middle:
-          "aria-selected:bg-secondary aria-selected:text-navy",
+          "aria-selected:bg-saffron/10 aria-selected:text-navy font-bold",
         hidden: "invisible",
         ...classNames,
       }}

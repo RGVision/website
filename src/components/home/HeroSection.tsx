@@ -10,8 +10,8 @@ export default function HeroSection({ villas = [], categories = [] }: { villas: 
         <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden bg-white">
             {/* Background Image with Global Gradient */}
             <div className="absolute inset-0 z-0">
-                <img 
-                    src={heroVilla.image} 
+                <img
+                    src={heroVilla.image}
                     alt="Luxury Villa"
                     className="w-full h-full object-cover"
                 />
@@ -19,7 +19,7 @@ export default function HeroSection({ villas = [], categories = [] }: { villas: 
             </div>
 
             {/* Content Container */}
-            <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pt-24 pb-48">
+            <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pt-24 pb-60 md:pb-48">
                 <div className="max-w-4xl space-y-12 animate-fadeInUp">
                     {/* Minimalist Badge */}
                     <div className="inline-flex items-center gap-3 px-6 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
@@ -39,7 +39,7 @@ export default function HeroSection({ villas = [], categories = [] }: { villas: 
                     </div>
 
                     {/* Refined CTA Buttons */}
-                    <div className="flex flex-wrap items-center gap-8 pt-8">
+                    <div className="hidden md:flex flex-wrap items-center gap-8 pt-8">
                         <Button asChild size="lg" className="h-14 px-12 bg-white text-navy-dark hover:bg-saffron hover:text-white rounded-full font-black transition-all duration-500 shadow-2xl border-0 uppercase text-[10px] tracking-widest">
                             <Link href="/villas">View Collection</Link>
                         </Button>
@@ -51,7 +51,7 @@ export default function HeroSection({ villas = [], categories = [] }: { villas: 
             </div>
 
             {/* Search Filter Overlay */}
-            <div className="absolute bottom-10 left-0 right-0 z-20 px-6">
+            <div className="absolute bottom-[-100px] md:bottom-10 left-0 right-0 z-20 px-6">
                 <div className="max-w-6xl mx-auto">
                     <SearchFilter categories={categories} initialVillas={villas} />
                 </div>

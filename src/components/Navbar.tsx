@@ -70,8 +70,8 @@ export default function Navbar() {
                     {/* Mobile Sheet */}
                     <Sheet>
                         <SheetTrigger asChild>
-                            <Button variant="ghost" size="icon" className={`md:hidden ${isScrolled ? "text-navy" : "text-white"}`}>
-                                <FaBars className="text-lg" />
+                            <Button variant="ghost" size="icon" className={`md:hidden ${isScrolled ? "text-navy" : "text-white"} hover:bg-transparent px-0`}>
+                                <FaBars className="text-2xl" />
                             </Button>
                         </SheetTrigger>
                         <SheetContent side="right" className="bg-white border-border w-[300px]">

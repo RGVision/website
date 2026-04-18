@@ -22,6 +22,15 @@ export function DatePickerWithRange({
   date: DateRange | undefined;
   setDate: (date: DateRange | undefined) => void;
 }) {
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   return (
     <div className={cn("grid gap-2", className)}>
       <Popover>
@@ -49,14 +58,18 @@ export function DatePickerWithRange({
             </div>
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="w-auto p-0 bg-white border-navy/10 shadow-2xl rounded-2xl overflow-hidden" align="start">
+        <PopoverContent 
+          className="w-[calc(100vw-2rem)] md:w-auto p-0 bg-white border-navy/10 shadow-3xl rounded-[24px] overflow-hidden z-[100] mx-4 md:mx-0" 
+          align={isMobile ? "center" : "start"}
+          sideOffset={12}
+        >
           <Calendar
             initialFocus
             mode="range"
             defaultMonth={date?.from}
             selected={date}
             onSelect={setDate}
-            numberOfMonths={2}
+            numberOfMonths={isMobile ? 1 : 2}
             className="p-3"
           />
         </PopoverContent>
