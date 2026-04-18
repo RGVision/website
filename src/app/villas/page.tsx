@@ -7,7 +7,7 @@ export default async function VillasPage() {
     const locations = Array.from(new Set(villas.map((v) => v.location)));
 
     return (
-        <div className="max-w-7xl mx-auto px-6 pt-10 pb-20 min-h-[80vh]">
+        <div className="max-w-7xl mx-auto px-6 pt-24 pb-20 min-h-[80vh]">
             {/* Header */}
             <div className="mb-10">
                 <h1 className="font-display text-[length:var(--font-size-h1)] font-bold mb-2">

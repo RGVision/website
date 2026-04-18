@@ -13,9 +13,9 @@ export default function LocationSection({ title, villas }: Props) {
     return (
         <section className="py-16">
             <div className="flex items-center justify-between mb-10">
-                <h2 className="font-display text-[length:var(--font-size-h3)] font-semibold">{title}</h2>
-                <Link href="/villas" className="flex items-center gap-2 text-gold text-sm font-medium hover:gap-3 transition-all duration-300">
-                    View All <FaChevronRight />
+                <h2 className="font-display text-3xl md:text-4xl text-navy font-semibold">{title}</h2>
+                <Link href="/villas" className="flex items-center gap-2 text-saffron text-sm font-bold hover:gap-3 transition-all duration-300 uppercase tracking-widest">
+                    View All <FaChevronRight className="text-xs" />
                 </Link>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

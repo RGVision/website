@@ -44,18 +44,22 @@ export default function StatsSection({ stats }: Props) {
     }, [triggered, animateCount]);
 
     return (
-        <section ref={ref} className="py-20 relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-bg-primary)] via-[var(--color-bg-secondary)] to-[var(--color-bg-primary)] rounded-3xl" />
-            <div className="relative grid grid-cols-2 md:grid-cols-4 gap-6">
+        <section ref={ref} className="py-24 relative px-6 md:px-0">
+            <div className="absolute inset-0 bg-linen rounded-[32px] border border-black/5" />
+            <div className="relative grid grid-cols-2 lg:grid-cols-4 gap-12 md:gap-20 p-12 md:p-24">
                 {stats.map((stat, i) => {
                     const Icon = iconMap[i];
                     return (
-                        <div key={stat.label} className="glass rounded-2xl p-8 text-center hover:-translate-y-1 transition-transform duration-300">
-                            <Icon className="text-3xl text-gold mx-auto mb-4" />
-                            <div className="text-3xl md:text-4xl font-bold font-display text-gold mb-2">
+                        <div key={stat.label} className="text-center group">
+                            <div className="w-16 h-16 rounded-2xl bg-white flex items-center justify-center mx-auto mb-10 group-hover:bg-saffron group-hover:scale-110 transition-all duration-700 shadow-soft border border-black/5">
+                                <Icon className="text-2xl text-saffron group-hover:text-white transition-colors" />
+                            </div>
+                            <div className="text-6xl md:text-7xl font-medium font-display text-navy-dark mb-4 tracking-tighter">
                                 {counts[i]}{stat.suffix}
                             </div>
-                            <div className="text-sm text-[var(--color-text-muted)]">{stat.label}</div>
+                            <div className="text-xs font-black uppercase tracking-[0.4em] text-navy/60 group-hover:text-saffron transition-colors">
+                                {stat.label}
+                            </div>
                         </div>
                     );
                 })}

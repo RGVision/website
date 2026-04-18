@@ -41,64 +41,55 @@ export default function ContactPage() {
     };
 
     return (
-        <div className="min-h-screen pt-24 pb-20">
+        <div className="min-h-screen pt-32 pb-32 bg-white">
             <div className="max-w-7xl mx-auto px-6">
                 {/* Header */}
-                <div className="text-center max-w-2xl mx-auto mb-20 animate-fadeInUp">
-                    <div className="inline-flex items-center gap-3 px-6 py-2 glass rounded-full mb-6 border border-gold/20">
-                        <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
-                        <span className="text-xs tracking-[0.2em] uppercase text-gold font-medium">Get in Touch</span>
+                <div className="text-center max-w-3xl mx-auto mb-24 animate-fadeInUp">
+                    <div className="inline-flex items-center gap-3 px-8 py-3 bg-secondary/50 rounded-full mb-8 border border-border">
+                        <span className="w-1.5 h-1.5 rounded-full bg-saffron animate-pulse" />
+                        <span className="text-[10px] tracking-[0.3em] uppercase text-navy font-bold">Get in Touch</span>
                     </div>
-                    <h1 className="font-display text-5xl md:text-6xl font-light mb-6">
-                        Contact <span className="text-gradient-gold italic">Us</span>
+                    <h1 className="font-display text-5xl md:text-7xl lg:text-8xl text-navy font-semibold mb-8">
+                        Contact <span className="text-saffron italic">Us</span>
                     </h1>
-                    <p className="text-muted-foreground text-lg leading-relaxed">
+                    <p className="text-navy/60 text-xl leading-relaxed font-medium">
                         Have questions about our villas or need assistance with your booking? Our dedicated team is here to help you plan your perfect stay.
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
                     {/* Contact Info */}
                     <div className="space-y-8 animate-fadeInLeft" style={{ animationDelay: "0.2s" }}>
-                        <div className="glass p-8 rounded-3xl border border-white/5 space-y-8">
-                            <div>
-                                <h3 className="text-lg font-display text-gold uppercase tracking-widest mb-6">Contact Details</h3>
-                                <div className="space-y-6">
-                                    <div className="flex items-start gap-4 group">
-                                        <div className="w-12 h-12 rounded-2xl bg-gold/10 flex items-center justify-center border border-gold/20 group-hover:bg-gold/20 transition-all">
-                                            <FaPhoneAlt className="text-gold" />
+                        <div className="bg-navy p-10 rounded-[40px] shadow-deep space-y-12 relative overflow-hidden">
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-saffron/10 blur-[80px] -mr-32 -mt-32" />
+                            
+                            <div className="relative z-10">
+                                <h3 className="text-[10px] font-bold text-saffron uppercase tracking-[0.4em] mb-10">Contact Details</h3>
+                                <div className="space-y-10">
+                                    <div className="flex items-start gap-6 group">
+                                        <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center border border-white/10 group-hover:bg-saffron transition-all duration-500 shadow-lg">
+                                            <FaPhoneAlt className="text-saffron group-hover:text-navy transition-colors" />
                                         </div>
                                         <div>
-                                            <p className="text-sm text-muted-foreground mb-1 italic">Phone & WhatsApp</p>
-                                            <a href="tel:+916382221757" className="text-xl font-medium hover:text-gold transition-colors tracking-wide">+91 63822 21757</a>
+                                            <p className="text-xs text-white/40 mb-2 uppercase tracking-widest font-bold">Phone & WhatsApp</p>
+                                            <a href="tel:+916382221757" className="text-2xl font-semibold text-white hover:text-saffron transition-colors tracking-wide">+91 63822 21757</a>
                                         </div>
                                     </div>
-                                    <div className="flex items-start gap-4 group">
-                                        <div className="w-12 h-12 rounded-2xl bg-gold/10 flex items-center justify-center border border-gold/20 group-hover:bg-gold/20 transition-all">
-                                            <FaEnvelope className="text-gold" />
+                                    <div className="flex items-start gap-6 group">
+                                        <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center border border-white/10 group-hover:bg-saffron transition-all duration-500 shadow-lg">
+                                            <FaEnvelope className="text-saffron group-hover:text-navy transition-colors" />
                                         </div>
                                         <div>
-                                            <p className="text-sm text-muted-foreground mb-1 italic">Email Address</p>
-                                            <a href="mailto:vorastays@gmail.com" className="text-xl font-medium hover:text-gold transition-colors tracking-wide">vorastays@gmail.com</a>
-                                        </div>
-                                    </div>
-                                    <div className="flex items-start gap-4 group hidden">
-                                        <div className="w-12 h-12 rounded-2xl bg-gold/10 flex items-center justify-center border border-gold/20 group-hover:bg-gold/20 transition-all">
-                                            <FaMapMarkerAlt className="text-gold" />
-                                        </div>
-                                        <div>
-                                            <p className="text-sm text-muted-foreground mb-1 italic">Main Office</p>
-                                            <p className="text-xl font-medium leading-relaxed">Luxury Chambers, 4th Floor,<br />Bandra West, Mumbai 400050</p>
+                                            <p className="text-xs text-white/40 mb-2 uppercase tracking-widest font-bold">Email Address</p>
+                                            <a href="mailto:vorastays@gmail.com" className="text-2xl font-semibold text-white hover:text-saffron transition-colors tracking-wide">vorastays@gmail.com</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <Separator className="bg-white/5" />
-
-                            <div>
-                                <h3 className="text-lg font-display text-gold uppercase tracking-widest mb-4">Trust & Reliability</h3>
-                                <p className="text-muted-foreground leading-relaxed italic">
+                            <div className="relative z-10 pt-10 border-t border-white/10">
+                                <h3 className="text-[10px] font-bold text-saffron uppercase tracking-[0.4em] mb-4">Trust & Reliability</h3>
+                                <p className="text-white/60 leading-relaxed font-medium italic text-sm">
                                     As your trusted partner for premium accommodation, we ensure verified properties and round-the-clock support for a worry-free experience.
                                 </p>
                             </div>
@@ -107,46 +98,46 @@ export default function ContactPage() {
 
                     {/* Form */}
                     <div className="animate-fadeInRight" style={{ animationDelay: "0.4s" }}>
-                        <div className="glass p-8 md:p-10 rounded-3xl border border-white/5 shadow-2xl shadow-black/40">
+                        <div className="bg-white p-10 md:p-12 rounded-[40px] border border-border shadow-deep">
                             {status === "success" ? (
-                                <div className="text-center py-12 space-y-6">
-                                    <div className="w-20 h-20 bg-gold/10 border border-gold/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                                        <FaPaperPlane className="text-3xl text-gold" />
+                                <div className="text-center py-16 space-y-8">
+                                    <div className="w-24 h-24 bg-saffron/10 rounded-full flex items-center justify-center mx-auto mb-8 shadow-xl">
+                                        <FaPaperPlane className="text-4xl text-saffron" />
                                     </div>
-                                    <h2 className="text-3xl font-display text-gold italic">Message Sent</h2>
-                                    <p className="text-muted-foreground">Thank you for reaching out. Our team will get back to you within 24 hours.</p>
-                                    <Button onClick={() => setStatus("idle")} variant="outline" className="rounded-full border-gold/20 hover:border-gold transition-all">
+                                    <h2 className="text-4xl font-display text-navy font-semibold italic">Message Sent</h2>
+                                    <p className="text-navy/60 font-medium">Thank you for reaching out. Our luxury consultants will get back to you within 24 hours.</p>
+                                    <Button onClick={() => setStatus("idle")} className="rounded-full bg-navy text-white px-8 h-12 font-bold uppercase tracking-widest text-xs">
                                         Send Another Message
                                     </Button>
                                 </div>
                             ) : (
-                                <form onSubmit={handleSubmit} className="space-y-6">
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                        <div className="space-y-2">
-                                            <label className="text-xs uppercase tracking-widest text-gold/80 font-semibold ml-1">Full Name</label>
-                                            <Input name="name" required placeholder="Your Name" className="h-14 bg-white/[0.03] border-white/10 rounded-2xl focus:border-gold/30 transition-all" />
+                                <form onSubmit={handleSubmit} className="space-y-8">
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                        <div className="space-y-3">
+                                            <label className="text-[10px] uppercase tracking-[0.2em] text-navy/40 font-bold ml-1">Full Name</label>
+                                            <Input name="name" required placeholder="Your Name" className="h-14 bg-secondary/30 border-border rounded-xl focus:border-saffron/50 transition-all text-navy" />
                                         </div>
-                                        <div className="space-y-2">
-                                            <label className="text-xs uppercase tracking-widest text-gold/80 font-semibold ml-1">Email Address</label>
-                                            <Input name="email" required type="email" placeholder="Your Email" className="h-14 bg-white/[0.03] border-white/10 rounded-2xl focus:border-gold/30 transition-all" />
+                                        <div className="space-y-3">
+                                            <label className="text-[10px] uppercase tracking-[0.2em] text-navy/40 font-bold ml-1">Email Address</label>
+                                            <Input name="email" required type="email" placeholder="Your Email" className="h-14 bg-secondary/30 border-border rounded-xl focus:border-saffron/50 transition-all text-navy" />
                                         </div>
                                     </div>
-                                    <div className="space-y-2">
-                                        <label className="text-xs uppercase tracking-widest text-gold/80 font-semibold ml-1">Phone Number</label>
-                                        <Input name="phone" required placeholder="+91 Your Number" className="h-14 bg-white/[0.03] border-white/10 rounded-2xl focus:border-gold/30 transition-all" />
+                                    <div className="space-y-3">
+                                        <label className="text-[10px] uppercase tracking-[0.2em] text-navy/40 font-bold ml-1">Phone Number</label>
+                                        <Input name="phone" required placeholder="+91 Your Number" className="h-14 bg-secondary/30 border-border rounded-xl focus:border-saffron/50 transition-all text-navy" />
                                     </div>
-                                    <div className="space-y-2">
-                                        <label className="text-xs uppercase tracking-widest text-gold/80 font-semibold ml-1">Subject</label>
-                                        <Input name="subject" required placeholder="How can we help?" className="h-14 bg-white/[0.03] border-white/10 rounded-2xl focus:border-gold/30 transition-all" />
+                                    <div className="space-y-3">
+                                        <label className="text-[10px] uppercase tracking-[0.2em] text-navy/40 font-bold ml-1">Subject</label>
+                                        <Input name="subject" required placeholder="How can we help?" className="h-14 bg-secondary/30 border-border rounded-xl focus:border-saffron/50 transition-all text-navy" />
                                     </div>
-                                    <div className="space-y-2">
-                                        <label className="text-xs uppercase tracking-widest text-gold/80 font-semibold ml-1">Your Message</label>
-                                        <Textarea name="message" required placeholder="Tell us about your requirements..." className="min-h-[150px] bg-white/[0.03] border-white/10 rounded-2xl focus:border-gold/30 transition-all p-4 resize-none" />
+                                    <div className="space-y-3">
+                                        <label className="text-[10px] uppercase tracking-[0.2em] text-navy/40 font-bold ml-1">Your Message</label>
+                                        <Textarea name="message" required placeholder="Tell us about your requirements..." className="min-h-[150px] bg-secondary/30 border-border rounded-xl focus:border-saffron/50 transition-all p-4 resize-none text-navy" />
                                     </div>
                                     {status === "error" && (
-                                        <p className="text-red-500 text-sm italic ml-1 mb-2">Something went wrong. Please try again or call us directly.</p>
+                                        <p className="text-red-500 text-sm font-bold italic ml-1 mb-2">Something went wrong. Please try again or call us directly.</p>
                                     )}
-                                    <Button type="submit" disabled={status === "loading"} className="w-full h-14 bg-gold-gradient hover:shadow-gold text-primary-foreground font-semibold rounded-2xl transition-all duration-300">
+                                    <Button type="submit" disabled={status === "loading"} className="w-full h-14 bg-navy hover:bg-navy/90 text-white font-black rounded-xl transition-all duration-300 shadow-xl uppercase tracking-[0.3em] text-[10px] border-0">
                                         {status === "loading" ? "Sending Enquiry..." : "Send Message"}
                                     </Button>
                                 </form>

@@ -27,8 +27,8 @@ export default function HomeDiscovery({ categories, initialVillas }: HomeDiscove
 
     return (
         <section className="pt-20">
-            <h2 className="font-display text-[length:var(--font-size-h2)] font-semibold">
-                Discover Our <span className="text-gold">Newest Gems</span>
+            <h2 className="font-display text-4xl md:text-5xl text-navy font-semibold mb-8">
+                Discover Our <span className="text-saffron">Newest Gems</span>
             </h2>
             <CategoryTabs
                 categories={categories}

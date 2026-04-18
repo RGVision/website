@@ -16,7 +16,7 @@ export default function CategoryTabs({ categories, activeCategory, onCategoryCha
                     <TabsTrigger
                         key={cat.id}
                         value={cat.id}
-                        className="px-5 py-3 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-300 border border-border bg-card text-muted-foreground data-[state=active]:bg-gold-gradient data-[state=active]:text-primary-foreground data-[state=active]:border-primary data-[state=active]:shadow-gold hover:text-foreground hover:border-white/15"
+                        className="px-6 py-3 rounded-full text-[13px] font-semibold whitespace-nowrap transition-all duration-300 border border-border bg-white text-navy/70 data-[state=active]:bg-navy data-[state=active]:text-white data-[state=active]:border-navy data-[state=active]:shadow-lg hover:text-navy hover:border-navy/30"
                     >
                         {cat.label}
                     </TabsTrigger>

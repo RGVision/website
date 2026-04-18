@@ -46,36 +46,36 @@ export default function VillaDetails({ villa, similarVillas }: VillaDetailsProps
     return (
         <div className="max-w-7xl mx-auto px-6 pt-6 pb-20">
             {/* Breadcrumb */}
-            <nav className="flex items-center gap-2 mb-6 text-sm text-muted-foreground">
-                <Link href="/" className="hover:text-primary transition-colors">Home</Link>
+            <nav className="flex items-center gap-2 mb-6 text-[10px] uppercase tracking-widest font-bold text-navy/40">
+                <Link href="/" className="hover:text-saffron transition-colors">Home</Link>
                 <span>/</span>
-                <Link href="/villas" className="hover:text-primary transition-colors">Villas</Link>
+                <Link href="/villas" className="hover:text-saffron transition-colors">Villas</Link>
                 <span>/</span>
-                <span className="text-foreground/80">{villa.name}</span>
+                <span className="text-navy/80">{villa.name}</span>
             </nav>
 
             {/* Gallery */}
-            <div className="mb-10">
-                <div className="relative rounded-2xl overflow-hidden aspect-[16/8] mb-3">
+            <div className="mb-12">
+                <div className="relative rounded-[32px] overflow-hidden aspect-[16/8] mb-4 shadow-deep">
                     <img src={villa.images[activeImage]} alt={`${villa.name} - Image ${activeImage + 1}`} className="w-full h-full object-cover" />
-                    <Button variant="outline" size="icon" onClick={prevImage} className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-background/70 border-white/15 text-foreground backdrop-blur-md hover:bg-gold-gradient hover:border-primary hover:text-primary-foreground">
+                    <Button variant="outline" size="icon" onClick={prevImage} className="absolute left-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 border-white/20 text-white backdrop-blur-md hover:bg-white hover:text-navy transition-all duration-300">
                         <FaChevronLeft />
                     </Button>
-                    <Button variant="outline" size="icon" onClick={nextImage} className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-background/70 border-white/15 text-foreground backdrop-blur-md hover:bg-gold-gradient hover:border-primary hover:text-primary-foreground">
+                    <Button variant="outline" size="icon" onClick={nextImage} className="absolute right-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 border-white/20 text-white backdrop-blur-md hover:bg-white hover:text-navy transition-all duration-300">
                         <FaChevronRight />
                     </Button>
-                    <Button variant="outline" size="icon" onClick={() => setLightbox(true)} className="absolute bottom-4 right-4 rounded-lg bg-background/70 border-white/15 text-foreground backdrop-blur-md hover:bg-gold-gradient hover:text-primary-foreground">
-                        <FaExpand />
+                    <Button variant="outline" onClick={() => setLightbox(true)} className="absolute bottom-6 right-6 px-4 py-2 rounded-xl bg-navy/60 text-white backdrop-blur-md border-0 hover:bg-navy transition-all flex items-center gap-2 text-xs font-bold uppercase tracking-widest">
+                        <FaExpand className="text-xs" /> View Gallery
                     </Button>
                     {villa.tag && (
-                        <Badge className="absolute top-4 left-4 bg-gold-gradient text-primary-foreground border-0 uppercase tracking-wide text-sm font-bold px-5 py-2 hover:bg-gold-gradient">
+                        <Badge className="absolute top-6 left-6 bg-saffron text-navy border-0 uppercase tracking-[0.2em] text-[10px] font-bold px-5 py-2 hover:bg-saffron shadow-lg">
                             {villa.tag}
                         </Badge>
                     )}
                 </div>
-                <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
+                <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide px-2">
                     {villa.images.map((img, i) => (
-                        <button key={i} onClick={() => setActiveImage(i)} className={`w-24 h-[68px] rounded-lg overflow-hidden shrink-0 border-2 transition-all ${activeImage === i ? "border-primary opacity-100" : "border-transparent opacity-60 hover:opacity-90"}`}>
+                        <button key={i} onClick={() => setActiveImage(i)} className={`w-28 h-20 rounded-2xl overflow-hidden shrink-0 border-2 transition-all duration-300 active:scale-95 ${activeImage === i ? "border-saffron shadow-lg scale-105" : "border-transparent opacity-50 hover:opacity-100"}`}>
                             <img src={img} alt={`Thumb ${i + 1}`} className="w-full h-full object-cover" />
                         </button>
                     ))}
@@ -83,64 +83,60 @@ export default function VillaDetails({ villa, similarVillas }: VillaDetailsProps
             </div>
 
             {/* Content Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-12 items-start">
                 {/* Details */}
                 <div>
-                    <div className="flex flex-col md:flex-row justify-between items-start gap-6 mb-10">
+                    <div className="flex flex-col md:flex-row justify-between items-start gap-6 mb-12">
                         <div>
-                            <h1 className="font-display text-[length:var(--font-size-h1)] font-bold mb-2">{villa.name}</h1>
-                            <p className="flex items-center gap-2 text-muted-foreground">
-                                <FaMapMarkerAlt className="text-primary" /> {villa.location}
+                            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-navy font-semibold mb-4">{villa.name}</h1>
+                            <p className="flex items-center gap-2 text-navy/60 font-medium">
+                                <FaMapMarkerAlt className="text-saffron" /> {villa.location}
                             </p>
                         </div>
-                        <Badge variant="outline" className="flex items-center gap-2 px-5 py-2.5 rounded-full border-border text-sm">
-                            <FaStar className="text-primary" />
-                            <span className="font-bold">{villa.rating}</span>
-                            <span className="text-muted-foreground">({villa.reviews} reviews)</span>
-                        </Badge>
+                        <div className="flex flex-col items-end gap-2">
+                            <div className="flex items-center gap-2 bg-saffron/10 px-6 py-3 rounded-full border border-saffron/20">
+                                <FaStar className="text-saffron text-lg" />
+                                <span className="font-bold text-navy text-lg">{villa.rating}</span>
+                                <span className="text-navy/40 text-sm font-medium">/ {villa.reviews} experiences</span>
+                            </div>
+                        </div>
                     </div>
 
                     {/* Quick Stats */}
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
                         {[
                             { icon: FaBed, value: villa.bedrooms, label: "Bedrooms" },
                             { icon: FaBath, value: villa.bathrooms, label: "Bathrooms" },
                             { icon: FaUsers, value: villa.maxGuests, label: "Max Guests" },
                             { icon: FaRulerCombined, value: villa.area, label: "Area" },
                         ].map((stat) => (
-                            <Card key={stat.label} className="bg-card border-border">
-                                <CardContent className="flex items-center gap-3 p-4">
-                                    <stat.icon className="text-primary text-lg" />
-                                    <div>
-                                        <div className="font-bold">{stat.value}</div>
-                                        <div className="text-xs text-muted-foreground">{stat.label}</div>
-                                    </div>
-                                </CardContent>
-                            </Card>
+                            <div key={stat.label} className="bg-white border border-border rounded-2xl p-6 flex flex-col items-center text-center shadow-soft hover:shadow-deep transition-all group">
+                                <stat.icon className="text-saffron text-2xl mb-3 group-hover:scale-110 transition-transform" />
+                                <div className="font-bold text-navy text-xl">{stat.value}</div>
+                                <div className="text-[10px] uppercase tracking-widest text-navy/40 font-bold">{stat.label}</div>
+                            </div>
                         ))}
                     </div>
 
-                    <Separator className="bg-border mb-10" />
+                    <Separator className="bg-border/50 mb-12" />
 
                     {/* Description */}
-                    <div className="mb-10">
-                        <h2 className="font-display text-xl font-semibold mb-4">About this property</h2>
-                        <p className="text-[var(--color-text-secondary)] leading-relaxed">{villa.description}</p>
+                    <div className="mb-12">
+                        <h2 className="font-display text-2xl font-semibold mb-6 text-navy">About this property</h2>
+                        <p className="text-navy/70 leading-relaxed text-lg font-medium">{villa.description}</p>
                     </div>
 
                     {/* Amenities */}
-                    <div className="mb-10">
-                        <h2 className="font-display text-xl font-semibold mb-4">Amenities</h2>
-                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                    <div className="mb-12">
+                        <h2 className="font-display text-2xl font-semibold mb-6 text-navy">Amenities</h2>
+                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                             {villa.amenities.map((amenity) => {
                                 const Icon = amenityIcons[amenity] || FaStar;
                                 return (
-                                    <Card key={amenity} className="bg-card border-border hover:border-primary/30 transition-all">
-                                        <CardContent className="flex items-center gap-3 px-4 py-3 text-sm">
-                                            <Icon className="text-primary" />
-                                            {amenity}
-                                        </CardContent>
-                                    </Card>
+                                    <div key={amenity} className="flex items-center gap-4 px-6 py-4 bg-secondary/20 rounded-2xl border border-transparent hover:border-saffron/30 hover:bg-white transition-all text-navy font-semibold text-sm shadow-soft">
+                                        <Icon className="text-saffron text-lg" />
+                                        {amenity}
+                                    </div>
                                 );
                             })}
                         </div>
@@ -148,14 +144,15 @@ export default function VillaDetails({ villa, similarVillas }: VillaDetailsProps
                 </div>
 
                 {/* Sidebar */}
-                <div className="lg:sticky lg:top-[calc(72px+1.5rem)]">
-                    <Card className="bg-card border-border mb-4">
-                        <CardContent className="p-6 text-center">
-                            <div className="flex items-baseline justify-center gap-1">
-                                <span className="font-display text-[length:var(--font-size-h1)] font-bold text-primary">₹{villa.price.toLocaleString()}</span>
-                                <span className="text-muted-foreground">/ night</span>
+                <div className="lg:sticky lg:top-[calc(72px+2rem)]">
+                    <Card className="bg-navy border-0 mb-6 rounded-[32px] overflow-hidden shadow-deep">
+                        <CardContent className="p-8 text-center bg-navy/90 backdrop-blur-md">
+                            <div className="text-white/40 text-[10px] uppercase tracking-[0.3em] font-bold mb-3">Starting From</div>
+                            <div className="flex items-baseline justify-center gap-2">
+                                <span className="font-display text-5xl font-bold text-saffron">₹{villa.price.toLocaleString()}</span>
+                                <span className="text-white/60 text-sm font-medium">/ night</span>
                             </div>
-                            <p className="text-xs text-muted-foreground mt-1">Inclusive of all taxes</p>
+                            <p className="text-[10px] text-white/30 uppercase tracking-widest mt-4 font-bold border-t border-white/10 pt-4">Inclusive of all luxury services & taxes</p>
                         </CardContent>
                     </Card>
                     <BookingForm villaName={villa.name} />
@@ -163,10 +160,10 @@ export default function VillaDetails({ villa, similarVillas }: VillaDetailsProps
             </div>
 
             {/* Similar Villas */}
-            <Separator className="bg-border mt-16 mb-12" />
+            <Separator className="bg-border/50 mt-20 mb-16" />
             <section>
-                <h2 className="font-display text-[length:var(--font-size-h2)] font-semibold mb-10">
-                    You might also <span className="text-primary">love</span>
+                <h2 className="font-display text-3xl md:text-4xl text-navy font-semibold mb-12 text-center md:text-left">
+                    You might also <span className="text-saffron">love</span>
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {similarVillas.map((v) => <VillaCard key={v.slug} villa={v} />)}
@@ -175,18 +172,20 @@ export default function VillaDetails({ villa, similarVillas }: VillaDetailsProps
 
             {/* Lightbox Dialog */}
             <Dialog open={lightbox} onOpenChange={setLightbox}>
-                <DialogContent className="max-w-[90vw] max-h-[90vh] bg-black/95 border-white/10 p-4 flex items-center justify-center">
+                <DialogContent className="max-w-[95vw] max-h-[95vh] bg-navy/95 border-none p-4 flex items-center justify-center outline-none">
                     <DialogTitle className="sr-only">{villa.name} Gallery</DialogTitle>
-                    <Button variant="outline" size="icon" onClick={prevImage} className="absolute left-5 top-1/2 -translate-y-1/2 rounded-full bg-white/10 border-white/20 text-white hover:bg-gold-gradient hover:border-primary hover:text-primary-foreground">
-                        <FaChevronLeft />
+                    <Button variant="outline" size="icon" onClick={prevImage} className="absolute left-6 top-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-white/10 border-white/20 text-white hover:bg-white hover:text-navy focus:ring-0">
+                        <FaChevronLeft className="text-lg" />
                     </Button>
-                    <img src={villa.images[activeImage]} alt={villa.name} className="max-w-[80vw] max-h-[80vh] object-contain rounded-xl" />
-                    <Button variant="outline" size="icon" onClick={nextImage} className="absolute right-5 top-1/2 -translate-y-1/2 rounded-full bg-white/10 border-white/20 text-white hover:bg-gold-gradient hover:border-primary hover:text-primary-foreground">
-                        <FaChevronRight />
-                    </Button>
-                    <div className="absolute bottom-5 left-1/2 -translate-x-1/2 px-5 py-2 bg-white/10 rounded-full text-sm text-white/80">
-                        {activeImage + 1} / {villa.images.length}
+                    <div className="relative group overflow-hidden rounded-2xl shadow-deep">
+                        <img src={villa.images[activeImage]} alt={villa.name} className="max-w-full max-h-[90vh] object-contain" />
+                        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 px-6 py-2 bg-black/50 backdrop-blur-md rounded-full text-xs font-bold text-white tracking-widest">
+                            {activeImage + 1} / {villa.images.length}
+                        </div>
                     </div>
+                    <Button variant="outline" size="icon" onClick={nextImage} className="absolute right-6 top-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-white/10 border-white/20 text-white hover:bg-white hover:text-navy focus:ring-0">
+                        <FaChevronRight className="text-lg" />
+                    </Button>
                 </DialogContent>
             </Dialog>
         </div>
