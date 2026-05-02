@@ -18,8 +18,8 @@ export default function StoryGallery({ villas }: { villas: any[] }) {
     return (
         <section className="py-24">
             <div className="text-center mb-20 animate-fadeInUp">
-                <h2 className="font-display text-5xl md:text-7xl text-navy-dark font-medium mb-6 tracking-tight">
-                    Visual <span className="text-saffron italic font-light font-display">Stories</span>
+                <h2 className="font-brand text-3xl md:text-5xl lg:text-6xl text-navy-dark mb-6 tracking-wider uppercase text-center">
+                    Visual <span className="text-saffron font-brand tracking-widest">Stories</span>
                 </h2>
                 <p className="text-navy/40 font-black uppercase tracking-[0.4em] text-[10px]">A mosaic of exclusive moments across our estates</p>
             </div>

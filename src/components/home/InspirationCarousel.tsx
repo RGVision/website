@@ -19,15 +19,15 @@ export default function InspirationCarousel({ testimonials }: Props) {
     return (
         <section className="py-24">
             <div className="text-center mb-20 animate-fadeInUp">
-                <h2 className="font-display text-5xl md:text-7xl text-navy-dark font-medium mb-6 tracking-tight">
-                    Guest <span className="text-saffron italic font-light font-display">Inspiration</span>
+                <h2 className="font-brand text-3xl md:text-5xl lg:text-6xl text-navy-dark mb-6 tracking-wider uppercase text-center">
+                    Guest <span className="text-saffron font-brand tracking-widest">Inspiration</span>
                 </h2>
                 <p className="text-navy/70 font-black uppercase tracking-[0.4em] text-xs">#WhereFamiliesBond captured by our vacationers</p>
             </div>
 
             <div className="flex items-center justify-between mb-12">
                 <div className="flex gap-4">
-                    <button onClick={() => scroll("left")} className="w-12 h-12 rounded-full bg-white shadow-soft border border-black/5 flex items-center justify-center hover:bg-saffron hover:text-white transition-all duration-500 group">
+                    <button onClick={() => scroll("left")} className="w-12 h-12 rounded-full bg-navy text-white shadow-xl flex items-center justify-center hover:bg-saffron transition-all duration-500 group">
                         <FaChevronLeft className="text-xs group-hover:-translate-x-0.5" />
                     </button>
                     <button onClick={() => scroll("right")} className="w-12 h-12 rounded-full bg-navy text-white shadow-xl flex items-center justify-center hover:bg-saffron transition-all duration-500 group">
@@ -45,7 +45,7 @@ export default function InspirationCarousel({ testimonials }: Props) {
                                 <FaStar key={j} className="text-saffron text-xs" />
                             ))}
                         </div>
-                        <p className="text-lg text-navy/70 leading-relaxed flex-1 mb-8 italic font-sans font-medium">
+                        <p className="text-lg text-navy/70 leading-relaxed flex-1 mb-8 font-sans font-medium">
                             &ldquo;{t.text}&rdquo;
                         </p>
                         <div className="flex items-center gap-5 pt-8 mt-auto border-t border-linen">

@@ -7,7 +7,7 @@ export default function HeroSection({ villas = [], categories = [] }: { villas: 
     const heroVilla = villas[0] || { image: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1600&q=80" };
 
     return (
-        <section className="relative min-h-[95vh] flex items-center justify-center overflow-hidden bg-white">
+        <section className="relative min-h-[95vh] mb-20 md:mb-0 flex items-center justify-center bg-white">
             {/* Background Image with Global Gradient */}
             <div className="absolute inset-0 z-0">
                 <img
@@ -19,7 +19,7 @@ export default function HeroSection({ villas = [], categories = [] }: { villas: 
             </div>
 
             {/* Content Container */}
-            <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pt-24 pb-60 md:pb-48">
+            <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pt-32 pb-20 md:pb-48">
                 <div className="max-w-4xl space-y-12 animate-fadeInUp">
                     {/* Minimalist Badge */}
                     <div className="inline-flex items-center gap-3 px-6 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
@@ -29,9 +29,9 @@ export default function HeroSection({ villas = [], categories = [] }: { villas: 
 
                     {/* Elegant Headline */}
                     <div className="space-y-8">
-                        <h1 className="font-display text-7xl md:text-9xl text-white leading-[1] font-medium tracking-tighter">
+                        <h1 className="font-brand text-4xl md:text-6xl text-white leading-[1.2] tracking-widest uppercase">
                             Nature Meets <br />
-                            <span className="text-saffron italic font-light font-display">Elegance.</span>
+                            <span className="text-saffron font-brand">Elegance.</span>
                         </h1>
                         <p className="text-xl md:text-2xl text-white/90 max-w-2xl font-medium leading-relaxed tracking-wide">
                             Experience the art of exclusive living in India's most breathtaking private villas.

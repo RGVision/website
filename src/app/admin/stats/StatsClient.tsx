@@ -18,7 +18,7 @@ export default function StatsClient({ stats: initialStats }: { stats: any[] }) {
     };
 
     return (
-        <div className="min-h-screen bg-slate-950 text-slate-100 p-8">
+        <div className="min-h-screen bg-slate-950 text-slate-100 p-8 pt-24">
             <div className="max-w-4xl mx-auto space-y-8">
                 <div className="flex items-center space-x-4">
                     <Link href="/admin">
@@ -59,24 +59,24 @@ export default function StatsClient({ stats: initialStats }: { stats: any[] }) {
                         <div key={s.id} className="p-4 bg-slate-900 border border-slate-800 rounded-lg">
                             {editingId === s.id ? (
                                 <div className="space-y-3">
-                                    <Input 
+                                    <Input
                                         type="number"
-                                        value={editForm.number} 
-                                        onChange={(e) => setEditForm({...editForm, number: parseInt(e.target.value)})}
+                                        value={editForm.number}
+                                        onChange={(e) => setEditForm({ ...editForm, number: parseInt(e.target.value) })}
                                         className="bg-slate-800 border-slate-700"
                                     />
-                                    <Input 
-                                        value={editForm.suffix} 
-                                        onChange={(e) => setEditForm({...editForm, suffix: e.target.value})}
+                                    <Input
+                                        value={editForm.suffix}
+                                        onChange={(e) => setEditForm({ ...editForm, suffix: e.target.value })}
                                         className="bg-slate-800 border-slate-700"
                                     />
-                                    <Input 
-                                        value={editForm.label} 
-                                        onChange={(e) => setEditForm({...editForm, label: e.target.value})}
+                                    <Input
+                                        value={editForm.label}
+                                        onChange={(e) => setEditForm({ ...editForm, label: e.target.value })}
                                         className="bg-slate-800 border-slate-700"
                                     />
                                     <div className="flex space-x-2">
-                                        <Button 
+                                        <Button
                                             onClick={async () => {
                                                 await updateStat(s.id, editForm);
                                                 setEditingId(null);

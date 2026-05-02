@@ -8,7 +8,7 @@ export default async function CategoriesPage() {
     const categories = await getCategories();
 
     return (
-        <div className="min-h-screen bg-slate-950 text-slate-100 p-8">
+        <div className="min-h-screen bg-slate-950 text-slate-100 p-8 pt-24">
             <div className="max-w-4xl mx-auto space-y-8">
                 <div className="flex items-center space-x-4">
                     <Link href="/admin">

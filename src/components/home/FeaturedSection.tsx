@@ -23,7 +23,7 @@ export default function FeaturedSection({ title, villas }: Props) {
             {title && (
                 <div className="flex items-center justify-between mb-12">
                     <h2 className="font-display text-5xl md:text-7xl text-navy-dark font-medium tracking-tight">
-                        {title.split(' ')[0]} <span className="text-saffron italic font-light font-display">{title.split(' ').slice(1).join(' ')}</span>
+                        {title.split(' ')[0]} <span className="text-saffron font-display tracking-wider">{title.split(' ').slice(1).join(' ')}</span>
                     </h2>
                     <div className="flex gap-4">
                         <button onClick={() => scroll("left")} className="w-12 h-12 rounded-full bg-white shadow-soft border border-black/5 flex items-center justify-center hover:bg-saffron hover:text-white transition-all duration-500 group">

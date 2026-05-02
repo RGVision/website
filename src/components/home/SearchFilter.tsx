@@ -75,7 +75,7 @@ const SearchFilter = ({ categories = [], initialVillas = [] }: { categories?: an
               <SelectContent className="bg-white/95 backdrop-blur-xl border-navy/10 text-navy">
                 {[1, 2, 3, 4, 5, 6, 7, 8, 10, 12].map((num) => (
                   <SelectItem key={num} value={num.toString()}>
-                    {num}{num === 12 ? '+' : ''} {num === 1 ? 'Guest' : 'Guests'}
+                    {num}{num === 12 ? '+' : ''}
                   </SelectItem>
                 ))}
               </SelectContent>

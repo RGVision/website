@@ -8,7 +8,7 @@ export default async function VillasManager() {
     const [villas, categories] = await Promise.all([getVillas(), getCategories()]);
 
     return (
-        <div className="min-h-screen bg-slate-950 text-slate-100 p-8">
+        <div className="min-h-screen bg-slate-950 text-slate-100 p-8 pt-24">
             <div className="max-w-6xl mx-auto space-y-8">
                 <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-4">

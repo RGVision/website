@@ -53,7 +53,7 @@ export default function Footer() {
                                 </div>
                             </div>
                             <div className="flex flex-col justify-center">
-                                <span className="text-2xl font-display font-semibold italic uppercase tracking-tighter leading-none">
+                                <span className="text-2xl font-brand uppercase tracking-widest leading-none text-white">
                                     VORA
                                 </span>
                                 <span className="text-[7px] uppercase tracking-[0.2em] text-saffron font-bold mt-1">

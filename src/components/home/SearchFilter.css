@@ -68,7 +68,7 @@
 }
 
 .section-label {
-  font-family: var(--font-body);
+  font-family: var(--font-brand);
   font-size: 0.6rem;
   font-weight: 800;
   letter-spacing: 0.15em;
@@ -163,6 +163,7 @@
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1) !important;
     height: auto !important;
     width: 100% !important;
+    margin: 0 auto !important;
   }
 
   .search-filter-section {

@@ -23,7 +23,7 @@ export default function ExperiencesManager({ experiences: initialExperiences }: 
     };
 
     return (
-        <div className="min-h-screen bg-slate-950 text-slate-100 p-8">
+        <div className="min-h-screen bg-slate-950 text-slate-100 p-8 pt-24">
             <div className="max-w-4xl mx-auto space-y-8">
                 <div className="flex items-center space-x-4">
                     <Link href="/admin">
@@ -66,23 +66,23 @@ export default function ExperiencesManager({ experiences: initialExperiences }: 
                         <div key={exp.id} className="flex flex-col bg-slate-900 border border-slate-800 rounded-lg overflow-hidden relative">
                             {editingId === exp.id ? (
                                 <div className="p-4 space-y-3 bg-slate-800">
-                                    <Input 
-                                        value={editForm.title} 
-                                        onChange={(e) => setEditForm({...editForm, title: e.target.value})}
+                                    <Input
+                                        value={editForm.title}
+                                        onChange={(e) => setEditForm({ ...editForm, title: e.target.value })}
                                         className="bg-slate-900 border-slate-700"
                                     />
-                                    <Input 
-                                        value={editForm.subtitle} 
-                                        onChange={(e) => setEditForm({...editForm, subtitle: e.target.value})}
+                                    <Input
+                                        value={editForm.subtitle}
+                                        onChange={(e) => setEditForm({ ...editForm, subtitle: e.target.value })}
                                         className="bg-slate-900 border-slate-700"
                                     />
-                                    <Input 
-                                        value={editForm.image} 
-                                        onChange={(e) => setEditForm({...editForm, image: e.target.value})}
+                                    <Input
+                                        value={editForm.image}
+                                        onChange={(e) => setEditForm({ ...editForm, image: e.target.value })}
                                         className="bg-slate-900 border-slate-700"
                                     />
                                     <div className="flex space-x-2">
-                                        <Button 
+                                        <Button
                                             onClick={async () => {
                                                 await updateExperience(exp.id, editForm);
                                                 setEditingId(null);

@@ -10,7 +10,7 @@ export default async function AdminDashboard() {
     const session = await auth();
 
     return (
-        <div className="min-h-screen bg-slate-950 text-slate-100 p-8">
+        <div className="min-h-screen bg-slate-950 text-slate-100 p-8 pt-24">
             <div className="max-w-6xl mx-auto space-y-8">
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-slate-900/50 p-6 rounded-2xl border border-slate-800 backdrop-blur-sm">
                     <div>

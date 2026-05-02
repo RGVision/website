@@ -90,15 +90,15 @@ export default function BookingForm({ villaName }: Props) {
                         <div className="flex flex-col gap-4 w-full animate-fadeInUp">
                             <div className="relative w-full">
                                 <FaUser className="absolute left-4 top-1/2 -translate-y-1/2 text-navy/40 text-sm z-10" />
-                                <Input name="name" placeholder="Full Name" value={formData.name} onChange={handleChange} required className="pl-12 h-14 bg-secondary/30 border-border text-navy placeholder:text-navy/30 rounded-xl focus-visible:ring-saffron/50 focus-visible:border-saffron" />
+                                <Input name="name" placeholder="Full Name *" value={formData.name} onChange={handleChange} required className="pl-12 h-14 bg-secondary/30 border-border text-navy placeholder:text-navy/30 rounded-xl focus-visible:ring-saffron/50 focus-visible:border-saffron" />
                             </div>
                             <div className="relative w-full">
                                 <FaEnvelope className="absolute left-4 top-1/2 -translate-y-1/2 text-navy/40 text-sm z-10" />
-                                <Input name="email" type="email" placeholder="Email Address" value={formData.email} onChange={handleChange} required className="pl-12 h-14 bg-secondary/30 border-border text-navy placeholder:text-navy/30 rounded-xl focus-visible:ring-saffron/50 focus-visible:border-saffron" />
+                                <Input name="email" type="email" placeholder="Email Address *" value={formData.email} onChange={handleChange} required className="pl-12 h-14 bg-secondary/30 border-border text-navy placeholder:text-navy/30 rounded-xl focus-visible:ring-saffron/50 focus-visible:border-saffron" />
                             </div>
                             <div className="relative w-full">
                                 <FaPhone className="absolute left-4 top-1/2 -translate-y-1/2 text-navy/40 text-sm z-10" />
-                                <Input name="phone" type="tel" placeholder="Phone Number" value={formData.phone} onChange={handleChange} required className="pl-12 h-14 bg-secondary/30 border-border text-navy placeholder:text-navy/30 rounded-xl focus-visible:ring-saffron/50 focus-visible:border-saffron" />
+                                <Input name="phone" type="tel" placeholder="Phone Number *" value={formData.phone} onChange={handleChange} required className="pl-12 h-14 bg-secondary/30 border-border text-navy placeholder:text-navy/30 rounded-xl focus-visible:ring-saffron/50 focus-visible:border-saffron" />
                             </div>
                             <Button type="button" onClick={() => setStep(2)} className="w-full h-14 bg-navy text-white font-bold rounded-xl hover:bg-navy-dark transition-all duration-300 border-0 uppercase tracking-widest text-xs mt-2">
                                 Next Step
@@ -111,14 +111,14 @@ export default function BookingForm({ villaName }: Props) {
                         <div className="flex flex-col gap-4 w-full animate-fadeInUp">
                             <div className="grid grid-cols-2 gap-3 w-full">
                                 <div className="w-full">
-                                    <label className="text-[10px] uppercase font-bold tracking-[0.2em] text-navy/40 mb-2 block ml-1">Check-in</label>
+                                    <label className="text-[10px] uppercase font-bold tracking-[0.2em] text-navy/40 mb-2 block ml-1">Check-in *</label>
                                     <div className="relative w-full">
                                         <FaCalendarAlt className="absolute left-4 top-1/2 -translate-y-1/2 text-navy/40 text-sm z-10 pointer-events-none" />
                                         <Input type="date" name="checkIn" value={formData.checkIn} onChange={handleChange} required className="pl-12 h-14 bg-secondary/30 border-border text-navy rounded-xl focus-visible:ring-saffron/50 focus-visible:border-saffron cursor-pointer [color-scheme:light]" />
                                     </div>
                                 </div>
                                 <div className="w-full">
-                                    <label className="text-[10px] uppercase font-bold tracking-[0.2em] text-navy/40 mb-2 block ml-1">Check-out</label>
+                                    <label className="text-[10px] uppercase font-bold tracking-[0.2em] text-navy/40 mb-2 block ml-1">Check-out *</label>
                                     <div className="relative w-full">
                                         <FaCalendarAlt className="absolute left-4 top-1/2 -translate-y-1/2 text-navy/40 text-sm z-10 pointer-events-none" />
                                         <Input type="date" name="checkOut" value={formData.checkOut} onChange={handleChange} required className="pl-12 h-14 bg-secondary/30 border-border text-navy rounded-xl focus-visible:ring-saffron/50 focus-visible:border-saffron cursor-pointer [color-scheme:light]" />

@@ -18,7 +18,7 @@ export default function TestimonialsClient({ testimonials: initialTestimonials }
     };
 
     return (
-        <div className="min-h-screen bg-slate-950 text-slate-100 p-8">
+        <div className="min-h-screen bg-slate-950 text-slate-100 p-8 pt-24">
             <div className="max-w-4xl mx-auto space-y-8">
                 <div className="flex items-center space-x-4">
                     <Link href="/admin">
@@ -66,12 +66,12 @@ export default function TestimonialsClient({ testimonials: initialTestimonials }
                             {editingId === t.id ? (
                                 <div className="space-y-4">
                                     <div className="grid grid-cols-2 gap-4">
-                                        <Input value={editForm.name} onChange={(e) => setEditForm({...editForm, name: e.target.value})} className="bg-slate-800 border-slate-700" />
-                                        <Input value={editForm.avatar} onChange={(e) => setEditForm({...editForm, avatar: e.target.value})} className="bg-slate-800 border-slate-700" maxLength={2} />
-                                        <Input type="number" value={editForm.rating} onChange={(e) => setEditForm({...editForm, rating: parseInt(e.target.value)})} className="bg-slate-800 border-slate-700" min="1" max="5" />
-                                        <Input value={editForm.location} onChange={(e) => setEditForm({...editForm, location: e.target.value})} className="bg-slate-800 border-slate-700" />
+                                        <Input value={editForm.name} onChange={(e) => setEditForm({ ...editForm, name: e.target.value })} className="bg-slate-800 border-slate-700" />
+                                        <Input value={editForm.avatar} onChange={(e) => setEditForm({ ...editForm, avatar: e.target.value })} className="bg-slate-800 border-slate-700" maxLength={2} />
+                                        <Input type="number" value={editForm.rating} onChange={(e) => setEditForm({ ...editForm, rating: parseInt(e.target.value) })} className="bg-slate-800 border-slate-700" min="1" max="5" />
+                                        <Input value={editForm.location} onChange={(e) => setEditForm({ ...editForm, location: e.target.value })} className="bg-slate-800 border-slate-700" />
                                     </div>
-                                    <textarea value={editForm.text} onChange={(e) => setEditForm({...editForm, text: e.target.value})} className="w-full bg-slate-800 border-slate-700 rounded-md p-2 text-sm h-24" />
+                                    <textarea value={editForm.text} onChange={(e) => setEditForm({ ...editForm, text: e.target.value })} className="w-full bg-slate-800 border-slate-700 rounded-md p-2 text-sm h-24" />
                                     <div className="flex space-x-2">
                                         <Button onClick={async () => { await updateTestimonial(t.id, editForm); setEditingId(null); }} className="bg-emerald-600 flex-1">Save</Button>
                                         <Button variant="ghost" onClick={() => setEditingId(null)} className="flex-1">Cancel</Button>

@@ -51,7 +51,7 @@ export default function Navbar() {
                             <img src="/square_logo.png" alt="VORA" className="w-full h-full object-cover" />
                         </div>
                         <div className="flex flex-col justify-center">
-                            <span className={`text-2xl font-display font-semibold italic uppercase tracking-tighter transition-colors duration-300 leading-none ${isScrolled ? "text-navy" : "text-white"}`}>
+                            <span className={`text-2xl font-brand uppercase tracking-widest transition-colors duration-300 leading-none ${isScrolled ? "text-navy" : "text-white"}`}>
                                 VORA
                             </span>
                             <span className="text-[7px] uppercase tracking-[0.2em] text-saffron font-bold mt-0.5">
@@ -67,7 +67,7 @@ export default function Navbar() {
                         <Link
                             key={link.href}
                             href={link.href}
-                            className={`text-[10px] font-black uppercase tracking-[0.25em] transition-all duration-300 relative py-2 ${isScrolled ? "text-navy-dark hover:text-saffron" : "text-white hover:text-saffron"}`}
+                            className={`text-[8.5px] font-brand uppercase tracking-[0.25em] transition-all duration-300 relative py-2 ${isScrolled ? "text-navy-dark hover:text-saffron" : "text-white hover:text-saffron"}`}
                         >
                             {link.label}
                         </Link>
@@ -76,11 +76,11 @@ export default function Navbar() {
 
                 {/* Actions */}
                 <div className="flex items-center gap-6">
-                    <Button asChild className="hidden md:flex bg-navy text-white hover:bg-saffron rounded-full font-black px-10 h-12 transition-all duration-500 shadow-xl border-0 uppercase text-[10px] tracking-widest">
+                    <Button asChild className="hidden md:flex bg-navy text-white hover:bg-saffron rounded-full font-brand px-10 h-12 transition-all duration-500 shadow-xl border-0 uppercase text-[8.5px] tracking-widest">
                         <Link href="/villas">Book Now</Link>
                     </Button>
 
-                    <a href="https://wa.me/919384870117" target="_blank" className={`hidden md:flex items-center gap-2 px-6 h-12 rounded-full font-black text-[10px] tracking-widest transition-all duration-500 border ${isScrolled ? "bg-secondary text-navy-dark border-0" : "bg-white/10 text-white border-white/20 backdrop-blur-md hover:bg-white/20"}`}>
+                    <a href="https://wa.me/919384870117" target="_blank" className={`hidden md:flex items-center gap-2 px-6 h-12 rounded-full font-brand text-[8.5px] tracking-widest transition-all duration-500 border ${isScrolled ? "bg-secondary text-navy-dark border-0" : "bg-white/10 text-white border-white/20 backdrop-blur-md hover:bg-white/20"}`}>
                         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="" className={`w-3.5 h-3.5`} />
                         <span>WHATSAPP</span>
                     </a>
@@ -99,7 +99,7 @@ export default function Navbar() {
                                         <img src="/logo.png" alt="VORA" className="w-full h-full object-cover" />
                                     </div>
                                     <div className="flex flex-col items-start justify-center">
-                                        <span className="text-xl font-display font-semibold italic uppercase tracking-tighter text-navy leading-none">
+                                        <span className="text-xl font-brand uppercase tracking-widest text-navy leading-none">
                                             VORA
                                         </span>
                                         <span className="text-[6px] uppercase tracking-[0.2em] text-saffron font-bold mt-0.5">

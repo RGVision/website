@@ -44,7 +44,7 @@ export default function VillaDetails({ villa, similarVillas }: VillaDetailsProps
     const prevImage = () => setActiveImage((p) => (p - 1 + villa.images.length) % villa.images.length);
 
     return (
-        <div className="max-w-7xl mx-auto px-6 pt-6 pb-20">
+        <div className="max-w-7xl mx-auto px-6 pt-24 pb-20">
             {/* Breadcrumb */}
             <nav className="flex items-center gap-2 mb-6 text-[10px] uppercase tracking-widest font-bold text-navy/40">
                 <Link href="/" className="hover:text-saffron transition-colors">Home</Link>
@@ -58,14 +58,14 @@ export default function VillaDetails({ villa, similarVillas }: VillaDetailsProps
             <div className="mb-12">
                 <div className="relative rounded-[32px] overflow-hidden aspect-[16/8] mb-4 shadow-deep">
                     <img src={villa.images[activeImage]} alt={`${villa.name} - Image ${activeImage + 1}`} className="w-full h-full object-cover" />
-                    <Button variant="outline" size="icon" onClick={prevImage} className="absolute left-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 border-white/20 text-white backdrop-blur-md hover:bg-white hover:text-navy transition-all duration-300">
-                        <FaChevronLeft />
+                    <Button variant="outline" size="icon" onClick={prevImage} className="absolute left-3 md:left-6 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/10 border-white/20 text-white backdrop-blur-md hover:bg-white hover:text-navy transition-all duration-300">
+                        <FaChevronLeft className="text-xs" />
                     </Button>
-                    <Button variant="outline" size="icon" onClick={nextImage} className="absolute right-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 border-white/20 text-white backdrop-blur-md hover:bg-white hover:text-navy transition-all duration-300">
-                        <FaChevronRight />
+                    <Button variant="outline" size="icon" onClick={nextImage} className="absolute right-3 md:right-6 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/10 border-white/20 text-white backdrop-blur-md hover:bg-white hover:text-navy transition-all duration-300">
+                        <FaChevronRight className="text-xs" />
                     </Button>
-                    <Button variant="outline" onClick={() => setLightbox(true)} className="absolute bottom-6 right-6 px-4 py-2 rounded-xl bg-navy/60 text-white backdrop-blur-md border-0 hover:bg-navy transition-all flex items-center gap-2 text-xs font-bold uppercase tracking-widest">
-                        <FaExpand className="text-xs" /> View Gallery
+                    <Button variant="outline" onClick={() => setLightbox(true)} className="absolute bottom-3 right-3 md:bottom-6 md:right-6 px-3 py-1.5 md:px-4 md:py-2 rounded-xl bg-navy/60 text-white backdrop-blur-md border-0 hover:bg-navy transition-all flex items-center gap-2 text-[9px] md:text-xs font-bold uppercase tracking-widest">
+                        View Gallery
                     </Button>
                     {villa.tag && (
                         <Badge className="absolute top-6 left-6 bg-saffron text-navy border-0 uppercase tracking-[0.2em] text-[10px] font-bold px-5 py-2 hover:bg-saffron shadow-lg">
