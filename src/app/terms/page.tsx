@@ -60,15 +60,15 @@ export default function TermsPage() {
     },
     {
       title: "15. Force Majeure",
-      content: "Vora Stays shall not be held responsible for any disruptions caused due to events beyond control, including natural disasters, weather conditions, government restrictions, or utility failures."
+      content: "VORA shall not be held responsible for any disruptions caused due to events beyond control, including natural disasters, weather conditions, government restrictions, or utility failures."
     },
     {
       title: "16. Personal Belongings",
-      content: "Guests are responsible for their personal belongings. Vora Stays is not liable for any loss, theft, or damage."
+      content: "Guests are responsible for their personal belongings. VORA is not liable for any loss, theft, or damage."
     },
     {
       title: "17. Management Rights",
-      content: "Vora Stays reserves the right to refuse entry, cancel bookings, or evict guests in case of rule violations. No refund will be provided in such cases."
+      content: "VORA reserves the right to refuse entry, cancel bookings, or evict guests in case of rule violations. No refund will be provided in such cases."
     },
     {
       title: "18. Acceptance of Terms",
@@ -81,10 +81,10 @@ export default function TermsPage() {
       <div className="max-w-4xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-20 animate-fadeInUp">
-          <h4 className="text-saffron font-black uppercase tracking-[0.3em] text-[10px] mb-4">Vora Stays</h4>
+          <h4 className="text-saffron font-black uppercase tracking-[0.3em] text-[10px] mb-4">VORA</h4>
           <h1 className="text-4xl md:text-5xl font-display text-navy mb-6">Terms & Conditions</h1>
           <p className="text-navy/60 text-sm max-w-2xl mx-auto leading-relaxed">
-            Welcome to Vora Stays. By confirming your booking and staying at our property, you agree to comply with the following terms and conditions.
+            Welcome to VORA. By confirming your booking and staying at our property, you agree to comply with the following terms and conditions.
           </p>
           <div className="w-20 h-1 bg-saffron/20 mx-auto mt-10 rounded-full" />
         </div>

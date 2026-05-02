@@ -39,7 +39,7 @@ export default function AboutPage() {
                             </h2>
                             <div className="space-y-8 text-lg text-navy/70 leading-relaxed font-medium">
                                 <p>
-                                    At Vora Stays, we welcome individuals who are passionate about delivering exceptional guest experiences. Our mission is to redefine luxury travel — making it personal, distinctive, and unforgettable.
+                                    At VORA, we welcome individuals who are passionate about delivering exceptional guest experiences. Our mission is to redefine luxury travel — making it personal, distinctive, and unforgettable.
                                 </p>
                                 <p>
                                     Discover curated travel stories, destination inspirations, and refined living insights crafted for discerning travelers who seek more than just a place to stay.
@@ -88,7 +88,7 @@ export default function AboutPage() {
                             {
                                 icon: FaShieldAlt,
                                 title: "Safety & Assurance",
-                                desc: "Every Vora Stays property is verified and maintained to uphold the highest standards of safety, comfort, and discretion."
+                                desc: "Every VORA property is verified and maintained to uphold the highest standards of safety, comfort, and discretion."
                             },
                             {
                                 icon: FaHeart,

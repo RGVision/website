@@ -88,7 +88,7 @@ export default function VillaDetails({ villa, similarVillas }: VillaDetailsProps
                 <div>
                     <div className="flex flex-col md:flex-row justify-between items-start gap-6 mb-12">
                         <div>
-                            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-navy font-semibold mb-4">{villa.name}</h1>
+                            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-navy font-semibold italic mb-4 tracking-tight">{villa.name}</h1>
                             <p className="flex items-center gap-2 text-navy/60 font-medium">
                                 <FaMapMarkerAlt className="text-saffron" /> {villa.location}
                             </p>
@@ -121,9 +121,17 @@ export default function VillaDetails({ villa, similarVillas }: VillaDetailsProps
                     <Separator className="bg-border/50 mb-12" />
 
                     {/* Description */}
-                    <div className="mb-12">
-                        <h2 className="font-display text-2xl font-semibold mb-6 text-navy">About this property</h2>
-                        <p className="text-navy/70 leading-relaxed text-lg font-medium">{villa.description}</p>
+                    <div className="mb-16">
+                        <div className="flex items-center gap-6 mb-8">
+                            <h2 className="font-display text-3xl font-semibold text-navy italic">About this property</h2>
+                            <div className="flex-1 h-[1px] bg-border"></div>
+                        </div>
+                        <div className="p-8 md:p-10 rounded-[32px] bg-secondary/20 border border-border/50 relative overflow-hidden shadow-sm">
+                            <div className="absolute top-0 left-0 w-1.5 h-full bg-saffron/80"></div>
+                            <p className="text-navy/70 leading-[2.2] text-lg font-medium">
+                                {villa.description}
+                            </p>
+                        </div>
                     </div>
 
                     {/* Amenities */}
@@ -174,7 +182,7 @@ export default function VillaDetails({ villa, similarVillas }: VillaDetailsProps
             <Dialog open={lightbox} onOpenChange={setLightbox}>
                 <DialogContent className="max-w-[95vw] max-h-[95vh] bg-navy/95 border-none p-4 flex items-center justify-center outline-none">
                     <DialogTitle className="sr-only">{villa.name} Gallery</DialogTitle>
-                    <Button variant="outline" size="icon" onClick={prevImage} className="absolute left-6 top-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-white/10 border-white/20 text-white hover:bg-white hover:text-navy focus:ring-0">
+                    <Button variant="outline" size="icon" onClick={prevImage} className="absolute z-10 left-6 top-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-white/10 border-white/20 text-white hover:bg-white hover:text-navy focus:ring-0">
                         <FaChevronLeft className="text-lg" />
                     </Button>
                     <div className="relative group overflow-hidden rounded-2xl shadow-deep">
@@ -183,7 +191,7 @@ export default function VillaDetails({ villa, similarVillas }: VillaDetailsProps
                             {activeImage + 1} / {villa.images.length}
                         </div>
                     </div>
-                    <Button variant="outline" size="icon" onClick={nextImage} className="absolute right-6 top-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-white/10 border-white/20 text-white hover:bg-white hover:text-navy focus:ring-0">
+                    <Button variant="outline" size="icon" onClick={nextImage} className="absolute z-10 right-6 top-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-white/10 border-white/20 text-white hover:bg-white hover:text-navy focus:ring-0">
                         <FaChevronRight className="text-lg" />
                     </Button>
                 </DialogContent>

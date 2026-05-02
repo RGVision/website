@@ -10,8 +10,8 @@ import { getVillas, getCategories, getExperiences, getStats, getTestimonials } f
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: "Vora Stays – Where Exclusivity Meets Timeless Elegance",
-    description: "Experience the art of exclusive travel with Vora Stays. Curated luxury villas and heritage escapes across India, redefining luxury travel with unparalleled privacy and elegance.",
+    title: "VORA – Where Exclusivity Meets Timeless Elegance",
+    description: "Experience the art of exclusive travel with VORA. Curated luxury villas and heritage escapes across India, redefining luxury travel with unparalleled privacy and elegance.",
 };
 
 export default async function HomePage() {
@@ -39,7 +39,7 @@ export default async function HomePage() {
 
     return (
         <div className="overflow-hidden">
-            <HeroSection />
+            <HeroSection villas={[]} categories={[]} />
 
             <div className="max-w-7xl mx-auto px-6">
                 <HomeDiscovery
@@ -49,8 +49,8 @@ export default async function HomePage() {
 
                 <LocationSection title="Best Beach Villas" villas={beachVillas} />
                 <ExperiencesSection experiences={experiences} />
-                <StoryGallery />
-                <OffersSection />
+                <StoryGallery villas={allVillas} />
+                {/* <OffersSection /> */}
                 <StatsSection stats={displayStats} />
                 <InspirationCarousel testimonials={testimonials} />
             </div>

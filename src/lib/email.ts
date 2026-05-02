@@ -15,7 +15,7 @@ export async function sendContactEmail(data: ContactData) {
     <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #0a0a0f; color: #f0f6fc; border-radius: 16px; overflow: hidden;">
       <div style="background: linear-gradient(135deg, #c9a55c, #a8843a); padding: 32px; text-align: center;">
         <h1 style="margin: 0; font-size: 28px; color: #0a0a0f;">✉️ New Contact Enquiry</h1>
-        <p style="margin: 8px 0 0; color: #0a0a0f; opacity: 0.8;">Vora Stays — Vision of Relaxed Accommodation</p>
+        <p style="margin: 8px 0 0; color: #0a0a0f; opacity: 0.8;">VORA</p>
       </div>
       <div style="padding: 32px;">
         <h2 style="color: #c9a55c; margin-bottom: 16px;">Contact Details</h2>
@@ -33,7 +33,7 @@ export async function sendContactEmail(data: ContactData) {
     </div>`;
 
   const mailOptions = {
-    from: `"Vora Stays Contact" <${process.env.SMTP_USER || "noreply@vorastays.com"}>`,
+    from: `"VORA Contact" <${process.env.SMTP_USER || "noreply@vorastays.com"}>`,
     to: process.env.BOOKING_EMAIL_TO || process.env.SMTP_USER,
     subject: `Enquiry: ${subject} — ${name}`,
     html: htmlContent,
@@ -77,7 +77,7 @@ export async function sendBookingEmail(bookingData: BookingData) {
     <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #0a0a0f; color: #f0f6fc; border-radius: 16px; overflow: hidden;">
       <div style="background: linear-gradient(135deg, #c9a55c, #a8843a); padding: 32px; text-align: center;">
         <h1 style="margin: 0; font-size: 28px; color: #0a0a0f;">🏡 New Booking Request</h1>
-        <p style="margin: 8px 0 0; color: #0a0a0f; opacity: 0.8;">Vora Stays — Vision of Relaxed Accommodation</p>
+        <p style="margin: 8px 0 0; color: #0a0a0f; opacity: 0.8;">VORA</p>
       </div>
       <div style="padding: 32px;">
         <h2 style="color: #c9a55c; margin-bottom: 16px;">Property</h2>
@@ -99,7 +99,7 @@ export async function sendBookingEmail(bookingData: BookingData) {
     </div>`;
 
   const mailOptions = {
-    from: `"Vora Stays" <${process.env.SMTP_USER || "noreply@vorastays.com"}>`,
+    from: `"VORA" <${process.env.SMTP_USER || "noreply@vorastays.com"}>`,
     to: process.env.BOOKING_EMAIL_TO || process.env.SMTP_USER,
     subject: `New Booking: ${villaName} — ${name}`,
     html: htmlContent,

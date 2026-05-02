@@ -36,7 +36,7 @@ const SearchFilter = ({ categories = [], initialVillas = [] }: { categories?: an
           <div className="section-content">
             <label className="section-label">LOCATION</label>
             <Select value={location} onValueChange={setLocation}>
-              <SelectTrigger className="border-0 bg-transparent focus:ring-0 h-auto p-0 text-left text-navy font-semibold">
+              <SelectTrigger className="border-0 bg-transparent focus:ring-0 h-auto p-0 text-left text-navy font-semibold hover:text-navy data-[state=open]:text-navy">
                 <SelectValue placeholder="Where to go?" />
               </SelectTrigger>
               <SelectContent className="bg-white/95 backdrop-blur-xl border-navy/10 text-navy">
@@ -69,7 +69,7 @@ const SearchFilter = ({ categories = [], initialVillas = [] }: { categories?: an
           <div className="section-content">
             <label className="section-label">GUESTS</label>
             <Select value={guests} onValueChange={setGuests}>
-              <SelectTrigger className="border-0 bg-transparent focus:ring-0 h-auto p-0 text-left text-navy font-semibold">
+              <SelectTrigger className="border-0 bg-transparent focus:ring-0 h-auto p-0 text-left text-navy font-semibold hover:text-navy data-[state=open]:text-navy">
                 <SelectValue placeholder="Guests" />
               </SelectTrigger>
               <SelectContent className="bg-white/95 backdrop-blur-xl border-navy/10 text-navy">

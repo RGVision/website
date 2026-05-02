@@ -1,19 +1,19 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaTimes } from "react-icons/fa";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
-
-const images = [
-    { src: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=600&q=80", span: "row-span-2" },
-    { src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80", span: "" },
-    { src: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80", span: "" },
-    { src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80", span: "row-span-2" },
-    { src: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80", span: "" },
-    { src: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=600&q=80", span: "" },
-];
-
-export default function StoryGallery() {
+export default function StoryGallery({ villas }: { villas: any[] }) {
     const [lightbox, setLightbox] = useState<number | null>(null);
+    const [displayImages, setDisplayImages] = useState<any[]>([]);
+
+    useEffect(() => {
+        if (!villas || villas.length === 0) return;
+        const allImages = Array.from(new Set(villas.flatMap(v => v.images || [])));
+        const shuffled = [...allImages].sort(() => 0.5 - Math.random());
+        const selected = shuffled.slice(0, 9);
+        const spanPatterns = ["row-span-2", "", "", "row-span-2", "", ""];
+        setDisplayImages(selected.map((src, i) => ({ src, span: spanPatterns[i] })));
+    }, [villas]);
 
     return (
         <section className="py-24">
@@ -24,7 +24,7 @@ export default function StoryGallery() {
                 <p className="text-navy/40 font-black uppercase tracking-[0.4em] text-[10px]">A mosaic of exclusive moments across our estates</p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6 auto-rows-[240px]">
-                {images.map((img, i) => (
+                {displayImages.map((img, i) => (
                     <button
                         key={i}
                         onClick={() => setLightbox(i)}
@@ -44,7 +44,7 @@ export default function StoryGallery() {
                     <DialogTitle className="sr-only">Gallery Image</DialogTitle>
                     {lightbox !== null && (
                         <div className="relative w-full h-full flex items-center justify-center">
-                            <img src={images[lightbox].src} alt="" className="max-w-full max-h-[85vh] object-contain rounded-[24px]" />
+                            <img src={displayImages[lightbox].src} alt="" className="max-w-full max-h-[85vh] object-contain rounded-[24px]" />
                         </div>
                     )}
                 </DialogContent>

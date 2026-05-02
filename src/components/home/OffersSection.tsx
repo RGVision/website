@@ -41,9 +41,9 @@ export default function OffersSection() {
                 <div className="absolute inset-0 bg-navy/80 flex items-center px-10">
                     <div className="max-w-xl">
                         <h3 className="text-3xl md:text-4xl font-bold font-display text-white mb-3">List Your Property</h3>
-                        <p className="text-base text-white/70 mb-6 max-w-md">Earn premium returns by listing your luxury property with Vora Stays. We provide standard maintenance and management for your assets.</p>
-                        <a 
-                            href="https://wa.me/916382221757?text=Hi%20Vora%20Stays%2c%20I%27m%20interested%20in%20listing%20my%20property%20with%20you%20for%20collaboration."
+                        <p className="text-base text-white/70 mb-6 max-w-md">Earn premium returns by listing your luxury property with VORA. We provide standard maintenance and management for your assets.</p>
+                        <a
+                            href="https://wa.me/919384870117?text=Hi%20Vora%20Stays%2c%20I%27m%20interested%20in%20listing%20my%20property%20with%20you%20for%20collaboration."
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-block"

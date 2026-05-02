@@ -3,9 +3,9 @@
 import { FaWhatsapp } from "react-icons/fa";
 
 export default function WhatsAppButton() {
-  const phoneNumber = "916382221757";
-  const message = "Hello! I'm interested in booking a luxury villa with Vora Stays. Can you help me?";
-  
+  const phoneNumber = "919384870117";
+  const message = "Hello! I'm interested in booking a luxury villa with VORA. Can you help me?";
+
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   return (
@@ -24,7 +24,7 @@ export default function WhatsAppButton() {
         aria-label="Chat on WhatsApp"
       >
         <FaWhatsapp className="text-3xl text-white" />
-        
+
         {/* Pulsing Effect */}
         <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-20" />
       </a>

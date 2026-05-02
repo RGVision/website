@@ -1,8 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
-import { FaHome, FaSearch, FaBars } from "react-icons/fa";
+import { FaHome, FaSearch, FaBars, FaChevronLeft } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from "@/components/ui/sheet";
@@ -10,6 +10,7 @@ import { Separator } from "@/components/ui/separator";
 
 export default function Navbar() {
     const pathname = usePathname();
+    const router = useRouter();
     const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
@@ -33,15 +34,32 @@ export default function Navbar() {
     return (
         <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-background/95 backdrop-blur-xl shadow-lg shadow-black/20 border-b border-border" : "bg-transparent"}`}>
             <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-[72px]">
-                {/* Logo */}
-                <Link href="/" className="flex items-center gap-3 group">
-                    <div className="w-10 h-10 rounded-full overflow-hidden border border-black/5 group-hover:border-saffron transition-all duration-500">
-                        <img src="/logo.jpeg" alt="Vora Stays" className="w-full h-full object-cover" />
-                    </div>
-                    <span className={`text-2xl font-semibold tracking-tighter uppercase transition-colors duration-300 ${isScrolled ? "text-navy" : "text-white"}`}>
-                        Vora <span className="font-display italic text-saffron font-light">Stays</span>
-                    </span>
-                </Link>
+                {/* Logo & Back */}
+                <div className="flex items-center gap-4">
+                    {!isHome && (
+                        <Button
+                            variant="ghost"
+                            size="icon"
+                            onClick={() => router.back()}
+                            className={`hidden md:flex rounded-full hover:bg-transparent transition-all ${isScrolled ? "text-navy hover:text-saffron" : "text-white hover:text-saffron"}`}
+                        >
+                            <FaChevronLeft className="text-xl" />
+                        </Button>
+                    )}
+                    <Link href="/" className="flex items-center gap-3 group">
+                        <div className="w-10 h-10 rounded-full overflow-hidden border border-black/5 group-hover:border-saffron transition-all duration-500">
+                            <img src="/square_logo.png" alt="VORA" className="w-full h-full object-cover" />
+                        </div>
+                        <div className="flex flex-col justify-center">
+                            <span className={`text-2xl font-display font-semibold italic uppercase tracking-tighter transition-colors duration-300 leading-none ${isScrolled ? "text-navy" : "text-white"}`}>
+                                VORA
+                            </span>
+                            <span className="text-[7px] uppercase tracking-[0.2em] text-saffron font-bold mt-0.5">
+                                Exclusive #Private Stays
+                            </span>
+                        </div>
+                    </Link>
+                </div>
 
                 {/* Desktop Nav */}
                 <div className="hidden md:flex items-center gap-12">
@@ -62,7 +80,7 @@ export default function Navbar() {
                         <Link href="/villas">Book Now</Link>
                     </Button>
 
-                    <a href="https://wa.me/916382221757" target="_blank" className={`hidden md:flex items-center gap-2 px-6 h-12 rounded-full font-black text-[10px] tracking-widest transition-all duration-500 border ${isScrolled ? "bg-secondary text-navy-dark border-0" : "bg-white/10 text-white border-white/20 backdrop-blur-md hover:bg-white/20"}`}>
+                    <a href="https://wa.me/919384870117" target="_blank" className={`hidden md:flex items-center gap-2 px-6 h-12 rounded-full font-black text-[10px] tracking-widest transition-all duration-500 border ${isScrolled ? "bg-secondary text-navy-dark border-0" : "bg-white/10 text-white border-white/20 backdrop-blur-md hover:bg-white/20"}`}>
                         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="" className={`w-3.5 h-3.5`} />
                         <span>WHATSAPP</span>
                     </a>
@@ -78,9 +96,16 @@ export default function Navbar() {
                             <SheetHeader>
                                 <SheetTitle className="flex items-center gap-3">
                                     <div className="w-8 h-8 rounded-full overflow-hidden border border-saffron/30">
-                                        <img src="/logo.jpeg" alt="Vora Stays" className="w-full h-full object-cover" />
+                                        <img src="/logo.png" alt="VORA" className="w-full h-full object-cover" />
                                     </div>
-                                    <span className="text-xl font-semibold tracking-wider uppercase text-navy">Vora <span className="font-display italic text-saffron">Stays</span></span>
+                                    <div className="flex flex-col items-start justify-center">
+                                        <span className="text-xl font-display font-semibold italic uppercase tracking-tighter text-navy leading-none">
+                                            VORA
+                                        </span>
+                                        <span className="text-[6px] uppercase tracking-[0.2em] text-saffron font-bold mt-0.5">
+                                            Exclusive #Private Stays
+                                        </span>
+                                    </div>
                                 </SheetTitle>
                             </SheetHeader>
                             <Separator className="bg-border my-4" />
@@ -95,7 +120,7 @@ export default function Navbar() {
                                     <Link href="/villas">Book Now</Link>
                                 </Button>
                                 <Button asChild className="bg-[#25D366] text-white font-semibold border-0">
-                                    <a href="https://wa.me/916382221757" target="_blank">WhatsApp</a>
+                                    <a href="https://wa.me/919384870117" target="_blank">WhatsApp</a>
                                 </Button>
                             </div>
                         </SheetContent>

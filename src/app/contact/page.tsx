@@ -62,7 +62,7 @@ export default function ContactPage() {
                     <div className="space-y-8 animate-fadeInLeft" style={{ animationDelay: "0.2s" }}>
                         <div className="bg-navy p-10 rounded-[40px] shadow-deep space-y-12 relative overflow-hidden">
                             <div className="absolute top-0 right-0 w-64 h-64 bg-saffron/10 blur-[80px] -mr-32 -mt-32" />
-                            
+
                             <div className="relative z-10">
                                 <h3 className="text-[10px] font-bold text-saffron uppercase tracking-[0.4em] mb-10">Contact Details</h3>
                                 <div className="space-y-10">
@@ -72,7 +72,10 @@ export default function ContactPage() {
                                         </div>
                                         <div>
                                             <p className="text-xs text-white/40 mb-2 uppercase tracking-widest font-bold">Phone & WhatsApp</p>
-                                            <a href="tel:+916382221757" className="text-2xl font-semibold text-white hover:text-saffron transition-colors tracking-wide">+91 63822 21757</a>
+                                            <div className="flex flex-col gap-2">
+                                                <a href="tel:+919384870117" className="text-2xl font-semibold text-white hover:text-saffron transition-colors tracking-wide">+91 93848 70117</a>
+                                                <a href="tel:+919384870119" className="text-2xl font-semibold text-white hover:text-saffron transition-colors tracking-wide">+91 93848 70119</a>
+                                            </div>
                                         </div>
                                     </div>
                                     <div className="flex items-start gap-6 group">
@@ -114,25 +117,25 @@ export default function ContactPage() {
                                 <form onSubmit={handleSubmit} className="space-y-8">
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                         <div className="space-y-3">
-                                            <label className="text-[10px] uppercase tracking-[0.2em] text-navy/40 font-bold ml-1">Full Name</label>
-                                            <Input name="name" required placeholder="Your Name" className="h-14 bg-secondary/30 border-border rounded-xl focus:border-saffron/50 transition-all text-navy" />
+                                            <label className="text-[10px] uppercase tracking-[0.2em] text-navy font-bold ml-1">Full Name</label>
+                                            <Input name="name" required placeholder="Your Name" className="h-14 bg-secondary/30 border-border rounded-xl focus:border-saffron/50 transition-all text-navy placeholder:text-navy/40" />
                                         </div>
                                         <div className="space-y-3">
-                                            <label className="text-[10px] uppercase tracking-[0.2em] text-navy/40 font-bold ml-1">Email Address</label>
-                                            <Input name="email" required type="email" placeholder="Your Email" className="h-14 bg-secondary/30 border-border rounded-xl focus:border-saffron/50 transition-all text-navy" />
+                                            <label className="text-[10px] uppercase tracking-[0.2em] text-navy font-bold ml-1">Email Address</label>
+                                            <Input name="email" required type="email" placeholder="Your Email" className="h-14 bg-secondary/30 border-border rounded-xl focus:border-saffron/50 transition-all text-navy placeholder:text-navy/40" />
                                         </div>
                                     </div>
                                     <div className="space-y-3">
-                                        <label className="text-[10px] uppercase tracking-[0.2em] text-navy/40 font-bold ml-1">Phone Number</label>
-                                        <Input name="phone" required placeholder="+91 Your Number" className="h-14 bg-secondary/30 border-border rounded-xl focus:border-saffron/50 transition-all text-navy" />
+                                        <label className="text-[10px] uppercase tracking-[0.2em] text-navy font-bold ml-1">Phone Number</label>
+                                        <Input name="phone" required placeholder="+91 Your Number" className="h-14 bg-secondary/30 border-border rounded-xl focus:border-saffron/50 transition-all text-navy placeholder:text-navy/40" />
                                     </div>
                                     <div className="space-y-3">
-                                        <label className="text-[10px] uppercase tracking-[0.2em] text-navy/40 font-bold ml-1">Subject</label>
-                                        <Input name="subject" required placeholder="How can we help?" className="h-14 bg-secondary/30 border-border rounded-xl focus:border-saffron/50 transition-all text-navy" />
+                                        <label className="text-[10px] uppercase tracking-[0.2em] text-navy font-bold ml-1">Subject</label>
+                                        <Input name="subject" required placeholder="How can we help?" className="h-14 bg-secondary/30 border-border rounded-xl focus:border-saffron/50 transition-all text-navy placeholder:text-navy/40" />
                                     </div>
                                     <div className="space-y-3">
-                                        <label className="text-[10px] uppercase tracking-[0.2em] text-navy/40 font-bold ml-1">Your Message</label>
-                                        <Textarea name="message" required placeholder="Tell us about your requirements..." className="min-h-[150px] bg-secondary/30 border-border rounded-xl focus:border-saffron/50 transition-all p-4 resize-none text-navy" />
+                                        <label className="text-[10px] uppercase tracking-[0.2em] text-navy font-bold ml-1">Your Message</label>
+                                        <Textarea name="message" required placeholder="Tell us about your requirements..." className="min-h-[150px] bg-secondary/30 border-border rounded-xl focus:border-saffron/50 transition-all p-4 resize-none text-navy placeholder:text-navy/40" />
                                     </div>
                                     {status === "error" && (
                                         <p className="text-red-500 text-sm font-bold italic ml-1 mb-2">Something went wrong. Please try again or call us directly.</p>

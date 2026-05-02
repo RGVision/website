@@ -29,7 +29,7 @@ export default function VillaCard({ villa }: VillaCardProps) {
                 {/* Content */}
                 <CardContent className="p-8">
                     <div className="flex items-center justify-between mb-4">
-                        <h3 className="text-2xl font-medium group-hover:text-saffron transition-colors duration-300 font-display text-navy-dark tracking-tight">
+                        <h3 className="text-2xl font-medium group-hover:text-saffron transition-colors duration-300 font-display italic text-navy-dark tracking-tight">
                             {villa.name}
                         </h3>
                         <div className="flex items-center gap-1">

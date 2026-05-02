@@ -23,6 +23,23 @@ export function DatePickerWithRange({
   setDate: (date: DateRange | undefined) => void;
 }) {
   const [isMobile, setIsMobile] = React.useState(false);
+  const [open, setOpen] = React.useState(false);
+
+  const handleSelect = (newDate: DateRange | undefined) => {
+    let selection = newDate;
+
+    // If a full range was already selected, treat the next click as a fresh start
+    if (date?.from && date?.to && newDate?.from && newDate?.to) {
+      const newlySelected = newDate.from.getTime() !== date.from.getTime() ? newDate.from : newDate.to;
+      selection = { from: newlySelected, to: undefined };
+    }
+
+    setDate(selection);
+    // Only close if we just completed a range selection (i.e., 'to' date was just added or changed)
+    if (selection?.from && selection?.to && (date?.to && selection.to.getTime() !== date.to.getTime())) {
+      setOpen(false);
+    }
+  };
 
   React.useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
@@ -33,13 +50,13 @@ export function DatePickerWithRange({
 
   return (
     <div className={cn("grid gap-2", className)}>
-      <Popover>
+      <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger asChild>
           <Button
             id="date"
             variant={"outline"}
             className={cn(
-              "w-full justify-start text-left font-semibold border-0 bg-transparent hover:bg-transparent p-0 h-auto text-navy",
+              "w-full justify-start text-left font-semibold border-0 bg-transparent hover:bg-transparent p-0 h-auto text-navy hover:text-navy data-[state=open]:text-navy",
               !date && "text-navy/50"
             )}
           >
@@ -58,8 +75,8 @@ export function DatePickerWithRange({
             </div>
           </Button>
         </PopoverTrigger>
-        <PopoverContent 
-          className="w-[calc(100vw-2rem)] md:w-auto p-0 bg-white border-navy/10 shadow-3xl rounded-[24px] overflow-hidden z-[100] mx-4 md:mx-0" 
+        <PopoverContent
+          className="w-[calc(100vw-2rem)] md:w-auto p-0 bg-white border-navy/10 shadow-3xl rounded-[24px] overflow-hidden z-[100] mx-4 md:mx-0"
           align={isMobile ? "center" : "start"}
           sideOffset={12}
         >
@@ -68,7 +85,7 @@ export function DatePickerWithRange({
             mode="range"
             defaultMonth={date?.from}
             selected={date}
-            onSelect={setDate}
+            onSelect={handleSelect}
             numberOfMonths={isMobile ? 1 : 2}
             className="p-3"
           />
