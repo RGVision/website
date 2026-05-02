@@ -28,16 +28,20 @@ export function DatePickerWithRange({
   const handleSelect = (newDate: DateRange | undefined) => {
     let selection = newDate;
 
-    // If a full range was already selected, treat the next click as a fresh start
+    // Fresh start logic: if we already have a complete range, start a new one on next click
     if (date?.from && date?.to && newDate?.from && newDate?.to) {
-      const newlySelected = newDate.from.getTime() !== date.from.getTime() ? newDate.from : newDate.to;
+      // Determine which date was actually clicked (the one that differs from our current range)
+      const isFromChanged = newDate.from.getTime() !== date.from.getTime();
+      const newlySelected = isFromChanged ? newDate.from : newDate.to;
       selection = { from: newlySelected, to: undefined };
     }
 
     setDate(selection);
-    // Only close if we just completed a range selection (i.e., 'to' date was just added or changed)
-    if (selection?.from && selection?.to && (date?.to && selection.to.getTime() !== date.to.getTime())) {
-      setOpen(false);
+
+    // Auto-close when a full range (from AND to) is completed
+    if (selection?.from && selection?.to) {
+      // Use a small timeout to ensure the UI updates before closing on mobile
+      setTimeout(() => setOpen(false), 150);
     }
   };
 
