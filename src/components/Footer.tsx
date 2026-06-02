@@ -138,7 +138,7 @@ export default function Footer() {
                         <Link href="/terms" className="text-[10px] font-black uppercase tracking-[0.3em] text-white/20 hover:text-white transition-colors">
                             Terms of service
                         </Link>
-                        <Link href="#" className="text-[10px] font-black uppercase tracking-[0.3em] text-white/20 hover:text-white transition-colors">
+                        <Link href="https://www.vorastays.in/sitemap.xml" className="text-[10px] font-black uppercase tracking-[0.3em] text-white/20 hover:text-white transition-colors">
                             Sitemap
                         </Link>
                     </div>

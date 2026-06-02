@@ -12,6 +12,7 @@ export default function Navbar() {
     const pathname = usePathname();
     const router = useRouter();
     const [scrolled, setScrolled] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -21,6 +22,10 @@ export default function Navbar() {
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
+
+    useEffect(() => {
+        setIsOpen(false);
+    }, [pathname]);
 
     const isHome = pathname === "/";
     const isScrolled = scrolled || !isHome;
@@ -86,7 +91,7 @@ export default function Navbar() {
                     </a>
 
                     {/* Mobile Sheet */}
-                    <Sheet>
+                    <Sheet open={isOpen} onOpenChange={setIsOpen}>
                         <SheetTrigger asChild>
                             <Button variant="ghost" size="icon" className={`md:hidden ${isScrolled ? "text-navy" : "text-white"} hover:bg-transparent px-0`}>
                                 <FaBars className="text-2xl" />
@@ -112,15 +117,15 @@ export default function Navbar() {
                             <div className="flex flex-col gap-1">
                                 {links.map((link) => (
                                     <Button key={link.href} variant="ghost" asChild className="justify-start text-navy/70 hover:text-navy hover:bg-secondary">
-                                        <Link href={link.href}>{link.label}</Link>
+                                        <Link href={link.href} onClick={() => setIsOpen(false)}>{link.label}</Link>
                                     </Button>
                                 ))}
                                 <Separator className="bg-border my-3" />
                                 <Button asChild className="bg-navy text-white font-semibold border-0 mb-2">
-                                    <Link href="/villas">Book Now</Link>
+                                    <Link href="/villas" onClick={() => setIsOpen(false)}>Book Now</Link>
                                 </Button>
                                 <Button asChild className="bg-[#25D366] text-white font-semibold border-0">
-                                    <a href="https://wa.me/919384870117" target="_blank">WhatsApp</a>
+                                    <a href="https://wa.me/919384870117" target="_blank" onClick={() => setIsOpen(false)}>WhatsApp</a>
                                 </Button>
                             </div>
                         </SheetContent>
