@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     metadataBase: new URL("https://vorastays.in"),
     title: "VORA – Where Exclusivity Meets Timeless Elegance",
     description: "Experience the art of exclusive travel with VORA. Curated luxury villas and heritage escapes across India, redefining luxury travel with unparalleled privacy and elegance.",
-    keywords: "VORA, luxury villas, villa booking, premium stays, farmhouse booking, beach villa, India travel, exclusive escapes",
+    keywords: "VORA, luxury villas, villa booking, premium stays, private villas, beach villas, beachfront villas, private pool villas, luxury villa rentals, vacation villas, farmhouse booking, weekend getaway Chennai, luxury stay Chennai, ECR villas, East Coast Road villas, Kovalam beach villas, Mahabalipuram villas, Pondicherry villas, Tamil Nadu luxury stays, sea view villas, family vacation villas, group stay villas, corporate retreat villas, romantic villa stays, holiday homes Chennai, exclusive escapes, Chennai, ECR, Kovalam, Mahabalipuram, Pondicherry, Tamil Nadu, India travel",
     alternates: {
         canonical: "/",
     },
