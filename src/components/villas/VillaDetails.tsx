@@ -88,7 +88,7 @@ export default function VillaDetails({ villa, similarVillas }: VillaDetailsProps
                 <div>
                     <div className="flex flex-col md:flex-row justify-between items-start gap-6 mb-12">
                         <div>
-                            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-navy font-semibold italic mb-4 tracking-tight">{villa.name}</h1>
+                            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-navy font-bold mb-4 tracking-tight">{villa.name}</h1>
                             <p className="flex items-center gap-2 text-navy/60 font-medium">
                                 <FaMapMarkerAlt className="text-saffron" /> {villa.location}
                             </p>

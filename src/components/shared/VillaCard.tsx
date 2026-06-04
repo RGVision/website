@@ -29,7 +29,7 @@ export default function VillaCard({ villa }: VillaCardProps) {
                 {/* Content */}
                 <CardContent className="p-8">
                     <div className="flex items-center justify-between mb-4">
-                        <h3 className="text-2xl font-medium group-hover:text-saffron transition-colors duration-300 font-display italic text-navy-dark tracking-tight">
+                        <h3 className="text-2xl font-bold group-hover:text-saffron transition-colors duration-300 font-display text-navy-dark tracking-tight">
                             {villa.name}
                         </h3>
                         <div className="flex items-center gap-1">
@@ -37,7 +37,7 @@ export default function VillaCard({ villa }: VillaCardProps) {
                             <span className="font-black text-navy-dark text-xs">{villa.rating}</span>
                         </div>
                     </div>
-                    
+
                     <p className="flex items-center gap-1.5 text-xs text-navy/70 font-bold uppercase tracking-widest mb-8">
                         <FaMapMarkerAlt className="text-saffron/60" />
                         {villa.location}
