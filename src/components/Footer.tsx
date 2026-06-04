@@ -49,15 +49,15 @@ export default function Footer() {
                         <Link href="/" className="flex items-center gap-4 mb-8 group">
                             <div className="w-12 h-12 rounded-full overflow-hidden border border-white/10 p-0.5 group-hover:border-saffron transition-all duration-500">
                                 <div className="w-full h-full rounded-full overflow-hidden">
-                                    <img src="/DARK VORA LOGO WITH BG.svg" alt="ORA" className="w-full h-full object-cover" />
+                                    <img src="/DARK VORA LOGO WITH BG.svg" alt="VORA" className="w-full h-full object-cover" />
                                 </div>
                             </div>
                             <div className="flex flex-col justify-center">
                                 <span className="text-2xl font-brand uppercase tracking-widest leading-none text-white">
-                                    ORA
+                                    VORA
                                 </span>
-                                <span className="text-[7px] uppercase tracking-[0.2em] text-saffron font-bold mt-1">
-                                    Exclusive #Private Stays
+                                <span className="text-[7px] uppercase tracking-[0.2em] text-white font-bold mt-1">
+                                    Exclusive <span className="text-saffron">#Private </span> Stays
                                 </span>
                             </div>
                         </Link>
@@ -129,7 +129,7 @@ export default function Footer() {
 
                 <div className="pt-12 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-8">
                     <div className="text-[10px] font-black uppercase tracking-[0.3em] text-white/20">
-                        © 2026 ORA. CRAFTED FOR EXCEPTIONAL STAYS.
+                        © 2026 VORA. CRAFTED FOR EXCEPTIONAL STAYS.
                     </div>
                     <div className="flex gap-10">
                         <Link href="#" className="text-[10px] font-black uppercase tracking-[0.3em] text-white/20 hover:text-white transition-colors">

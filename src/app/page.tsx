@@ -11,8 +11,8 @@ import { getVillas, getCategories, getExperiences, getStats, getTestimonials } f
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: "ORA – Where Exclusivity Meets Timeless Elegance",
-    description: "Experience the art of exclusive travel with ORA. Curated luxury villas and heritage escapes across India, redefining luxury travel with unparalleled privacy and elegance.",
+    title: "VORA – Where Exclusivity Meets Timeless Elegance",
+    description: "Experience the art of exclusive travel with VORA. Curated luxury villas and heritage escapes across India, redefining luxury travel with unparalleled privacy and elegance.",
 };
 
 export const revalidate = 31536000; // Cache for 1 year (60 * 60 * 24 * 365)
@@ -54,7 +54,7 @@ export default async function HomePage() {
                 <ExperiencesSection experiences={experiences} />
                 <StoryGallery villas={allVillas} />
                 {/* <OffersSection /> */}
-                
+
                 <StayTuned />
 
                 <StatsSection stats={displayStats} />

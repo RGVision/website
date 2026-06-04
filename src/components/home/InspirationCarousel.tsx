@@ -32,10 +32,10 @@ export default function InspirationCarousel({ testimonials }: Props) {
             const cardWidth = container.children[0].clientWidth;
             const gap = 24; // gap-6 is 24px
             const itemWidth = cardWidth + gap;
-            
+
             const currentScroll = container.scrollLeft;
             let nextIndex = 0;
-            
+
             if (dir === "left") {
                 // Math.floor to ensure we go to the previous fully visible card
                 nextIndex = Math.floor((currentScroll - 1) / itemWidth);
@@ -43,10 +43,10 @@ export default function InspirationCarousel({ testimonials }: Props) {
                 // Math.ceil to ensure we go to the next card
                 nextIndex = Math.ceil((currentScroll + 1) / itemWidth);
             }
-            
+
             // Clamp index
             nextIndex = Math.max(0, Math.min(nextIndex, container.children.length - 1));
-            
+
             container.scrollTo({
                 left: nextIndex * itemWidth,
                 behavior: "smooth"
@@ -65,31 +65,29 @@ export default function InspirationCarousel({ testimonials }: Props) {
                         Stories from our <span className="text-transparent bg-clip-text bg-gradient-to-r from-saffron to-amber-500">Guests</span>
                     </h2>
                     <p className="mt-4 text-navy/70 text-base md:text-lg">
-                        Discover the unforgettable experiences and cherished memories captured by our guests during their luxurious stays with ORA.
+                        Discover the unforgettable experiences and cherished memories captured by our guests during their luxurious stays with VORA.
                     </p>
                 </div>
-                
+
                 <div className="flex gap-3 shrink-0">
-                    <button 
-                        onClick={() => scroll("left")} 
+                    <button
+                        onClick={() => scroll("left")}
                         disabled={!canScrollLeft}
-                        className={`w-12 h-12 rounded-full border border-navy/10 shadow-sm flex items-center justify-center transition-all duration-300 group ${
-                            canScrollLeft 
-                                ? "bg-white text-navy hover:bg-navy hover:text-white hover:border-navy focus:outline-none active:scale-95" 
+                        className={`w-12 h-12 rounded-full border border-navy/10 shadow-sm flex items-center justify-center transition-all duration-300 group ${canScrollLeft
+                                ? "bg-white text-navy hover:bg-navy hover:text-white hover:border-navy focus:outline-none active:scale-95"
                                 : "bg-navy/5 text-navy/30 cursor-not-allowed"
-                        }`}
+                            }`}
                         aria-label="Previous review"
                     >
                         <FaChevronLeft className={`text-sm ${canScrollLeft ? "group-hover:-translate-x-0.5" : ""} transition-transform`} />
                     </button>
-                    <button 
-                        onClick={() => scroll("right")} 
+                    <button
+                        onClick={() => scroll("right")}
                         disabled={!canScrollRight}
-                        className={`w-12 h-12 rounded-full border border-navy/10 shadow-sm flex items-center justify-center transition-all duration-300 group ${
-                            canScrollRight 
-                                ? "bg-white text-navy hover:bg-navy hover:text-white hover:border-navy focus:outline-none active:scale-95" 
+                        className={`w-12 h-12 rounded-full border border-navy/10 shadow-sm flex items-center justify-center transition-all duration-300 group ${canScrollRight
+                                ? "bg-white text-navy hover:bg-navy hover:text-white hover:border-navy focus:outline-none active:scale-95"
                                 : "bg-navy/5 text-navy/30 cursor-not-allowed"
-                        }`}
+                            }`}
                         aria-label="Next review"
                     >
                         <FaChevronRight className={`text-sm ${canScrollRight ? "group-hover:translate-x-0.5" : ""} transition-transform`} />
@@ -97,8 +95,8 @@ export default function InspirationCarousel({ testimonials }: Props) {
                 </div>
             </div>
 
-            <div 
-                ref={scrollRef} 
+            <div
+                ref={scrollRef}
                 onScroll={checkScroll}
                 className="flex gap-6 overflow-x-auto pb-8 -mx-6 px-6 scrollbar-hide snap-x snap-mandatory"
                 style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
@@ -113,11 +111,11 @@ export default function InspirationCarousel({ testimonials }: Props) {
                                 ))}
                             </div>
                         </div>
-                        
+
                         <p className="text-base text-navy/80 leading-relaxed flex-1 mb-8 italic">
                             "{t.text}"
                         </p>
-                        
+
                         <div className="flex items-center gap-4 pt-6 border-t border-navy/5 mt-auto">
                             <div className="w-12 h-12 rounded-full bg-navy flex items-center justify-center text-sm font-bold text-white shadow-md">
                                 {t.avatar}
