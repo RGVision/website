@@ -28,6 +28,7 @@
   --color-navy-dark: #020617;
   --color-saffron: #D4AF37; /* Champagne Gold for elegance */
   --color-saffron-light: #F5E6BE;
+  --color-gold: var(--color-saffron); /* Alias for admin pages */
   --color-linen: #FDFBF7; /* Soft background */
   --color-text-main: #1e293b;
   --color-text-muted: #64748b;

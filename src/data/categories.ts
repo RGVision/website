@@ -50,7 +50,7 @@ export const stats: Stat[] = [
 ];
 
 export const testimonials: Testimonial[] = [
-    { name: "Priya Sharma", avatar: "PS", rating: 5, text: "Absolutely stunning property! The villa exceeded all our expectations. The private pool, the views, and the impeccable service made our anniversary truly special.", location: "Stayed at Oceanview Paradise Villa" },
-    { name: "Rahul Mehta", avatar: "RM", rating: 5, text: "Best corporate retreat ever! Our team of 12 had the most productive and relaxing offsite. The villa was spacious, well-equipped, and the chef prepared amazing meals.", location: "Stayed at Heritage Haveli Palace" },
-    { name: "Ananya Das", avatar: "AD", rating: 5, text: "We hosted our daughter's birthday here and it was magical! The staff helped with decorations, the space was perfect for kids, and the bonfire night was unforgettable.", location: "Stayed at Royal Forest Retreat" },
+    { name: "Priya Sharma", avatar: "PS", rating: 5, text: "Absolutely stunning property! The villa exceeded all our expectations. The private pool, the views, and the impeccable service made our anniversary truly special.", location: "Stayed at Kasi Villa" },
+    { name: "Rahul Mehta", avatar: "RM", rating: 5, text: "Best corporate retreat ever! Our team of 12 had the most productive and relaxing offsite. The villa was spacious, well-equipped, and the chef prepared amazing meals.", location: "Stayed at La Coast" },
+    { name: "Ananya Das", avatar: "AD", rating: 5, text: "We hosted our daughter's birthday here and it was magical! The staff helped with decorations, the space was perfect for kids, and the bonfire night was unforgettable.", location: "Stayed at Prathiksha Garden" },
 ];

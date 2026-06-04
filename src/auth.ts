@@ -8,7 +8,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
             credentials: {
                 password: { label: "Password", type: "password" },
             },
-            async authorize(credentials) {
+            async authorize(credentials: any) {
                 if (credentials?.password === process.env.ADMIN_PASSWORD) {
                     return { id: "1", name: "Admin" };
                 }
@@ -17,7 +17,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         }),
     ],
     callbacks: {
-        authorized({ auth, request: { nextUrl } }) {
+        authorized({ auth, request: { nextUrl } }: any) {
             const isLoggedIn = !!auth?.user;
             const isAdminRoute = nextUrl.pathname.startsWith("/admin");
 

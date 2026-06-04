@@ -82,9 +82,8 @@ export async function deleteTestimonial(id: string) {
 }
 
 export async function revalidateAll() {
-    revalidatePath("/");
-    revalidatePath("/villas");
-    revalidatePath("/admin");
+    // Passing "layout" forces Next.js to revalidate the root layout and ALL nested pages/routes beneath it.
+    revalidatePath("/", "layout");
     return { success: true };
 }
 

@@ -15,6 +15,8 @@ export const metadata: Metadata = {
     description: "Experience the art of exclusive travel with ORA. Curated luxury villas and heritage escapes across India, redefining luxury travel with unparalleled privacy and elegance.",
 };
 
+export const revalidate = 31536000; // Cache for 1 year (60 * 60 * 24 * 365)
+
 export default async function HomePage() {
     const [categories, allVillas, experiences, stats, testimonials] = await Promise.all([
         getCategories(),
@@ -52,11 +54,12 @@ export default async function HomePage() {
                 <ExperiencesSection experiences={experiences} />
                 <StoryGallery villas={allVillas} />
                 {/* <OffersSection /> */}
+                
+                <StayTuned />
+
                 <StatsSection stats={displayStats} />
                 <InspirationCarousel testimonials={testimonials} />
             </div>
-
-            <StayTuned />
         </div>
     );
 }

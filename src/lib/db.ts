@@ -1,4 +1,5 @@
 import { adminSupabase } from './supabase';
+import { encrypt, decrypt } from './crypto';
 import { Category, categories as localCategories, experiences as localExperiences, stats as localStats, testimonials as localTestimonials } from '../data/categories';
 import { Villa, villas as localVillas } from '../data/villas';
 
@@ -207,9 +208,11 @@ export async function getTestimonials(): Promise<any[]> {
 
 export async function addSubscriber(data: { name: string; email: string; mobile: string }) {
     try {
+        const encryptedEmail = encrypt(data.email);
+        const encryptedMobile = encrypt(data.mobile);
         const { error } = await adminSupabase
             .from('subscribers')
-            .insert([{ name: data.name, email: data.email, mobile: data.mobile }]);
+            .insert([{ name: data.name, email: encryptedEmail, mobile: encryptedMobile }]);
 
         if (error) {
             console.error('⚠️ Error adding subscriber to Supabase:', error.message);
@@ -233,6 +236,14 @@ export async function getSubscribers(): Promise<any[]> {
         if (error) {
             console.error('⚠️ Supabase Subscribers Fetch Error:', error.message);
             return [];
+        }
+
+        if (data && data.length > 0) {
+            return data.map((sub: any) => ({
+                ...sub,
+                email: decrypt(sub.email),
+                mobile: decrypt(sub.mobile)
+            }));
         }
 
         return data || [];

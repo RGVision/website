@@ -77,7 +77,7 @@ export default function VillasClient({ villas, categories }: { villas: any[], ca
                             <div className="flex justify-between items-start">
                                 <div className="space-y-1">
                                     <p className="text-[10px] uppercase tracking-widest text-gold opacity-80">{villa.category?.label || villa.category}</p>
-                                    <CardTitle className="text-xl font-display line-clamp-1">{villa.name}</CardTitle>
+                                    <CardTitle className="text-xl font-display line-clamp-1 text-slate-100">{villa.name}</CardTitle>
                                     <p className="text-xs text-slate-400 font-medium">{villa.location}</p>
                                 </div>
                                 <p className="font-bold text-emerald-400 text-lg">₹{villa.price.toLocaleString()}</p>
