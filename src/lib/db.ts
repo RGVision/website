@@ -205,3 +205,39 @@ export async function getTestimonials(): Promise<any[]> {
     }
 }
 
+export async function addSubscriber(data: { name: string; email: string; mobile: string }) {
+    try {
+        const { error } = await adminSupabase
+            .from('subscribers')
+            .insert([{ name: data.name, email: data.email, mobile: data.mobile }]);
+
+        if (error) {
+            console.error('⚠️ Error adding subscriber to Supabase:', error.message);
+            throw error;
+        }
+
+        return { success: true };
+    } catch (err) {
+        console.error('❌ Critical Catch in addSubscriber:', err);
+        throw err;
+    }
+}
+
+export async function getSubscribers(): Promise<any[]> {
+    try {
+        const { data, error } = await adminSupabase
+            .from('subscribers')
+            .select('*')
+            .order('created_at', { ascending: false });
+
+        if (error) {
+            console.error('⚠️ Supabase Subscribers Fetch Error:', error.message);
+            return [];
+        }
+
+        return data || [];
+    } catch (err) {
+        console.error('❌ Critical Catch in getSubscribers:', err);
+        return [];
+    }
+}

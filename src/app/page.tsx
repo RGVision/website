@@ -5,13 +5,14 @@ import StoryGallery from "@/components/home/StoryGallery";
 import StatsSection from "@/components/home/StatsSection";
 import OffersSection from "@/components/home/OffersSection";
 import InspirationCarousel from "@/components/home/InspirationCarousel";
+import StayTuned from "@/components/home/StayTuned";
 import HomeDiscovery from "@/components/home/HomeDiscovery";
 import { getVillas, getCategories, getExperiences, getStats, getTestimonials } from "@/lib/db";
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: "VORA – Where Exclusivity Meets Timeless Elegance",
-    description: "Experience the art of exclusive travel with VORA. Curated luxury villas and heritage escapes across India, redefining luxury travel with unparalleled privacy and elegance.",
+    title: "ORA – Where Exclusivity Meets Timeless Elegance",
+    description: "Experience the art of exclusive travel with ORA. Curated luxury villas and heritage escapes across India, redefining luxury travel with unparalleled privacy and elegance.",
 };
 
 export default async function HomePage() {
@@ -54,6 +55,8 @@ export default async function HomePage() {
                 <StatsSection stats={displayStats} />
                 <InspirationCarousel testimonials={testimonials} />
             </div>
+
+            <StayTuned />
         </div>
     );
 }

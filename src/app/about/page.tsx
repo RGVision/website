@@ -8,18 +8,18 @@ export default function AboutPage() {
             {/* Hero Section */}
             <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 z-0">
-                    <img 
-                        src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1600&q=80" 
-                        alt="Luxury Landscape" 
+                    <img
+                        src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1600&q=80"
+                        alt="Luxury Landscape"
                         className="w-full h-full object-cover scale-105"
                     />
                     <div className="absolute inset-0 bg-navy/40 backdrop-blur-[2px]" />
                 </div>
-                
+
                 <div className="relative z-10 text-center max-w-4xl px-6 animate-fadeInUp">
                     <div className="inline-flex items-center gap-3 px-8 py-3 bg-white/10 backdrop-blur-md rounded-full mb-8 border border-white/20">
                         <span className="w-1.5 h-1.5 rounded-full bg-saffron animate-pulse" />
-                        <span className="text-[10px] tracking-[0.3em] uppercase text-white font-black">The Vora Story</span>
+                        <span className="text-[10px] tracking-[0.3em] uppercase text-white font-black">The ora Story</span>
                     </div>
                     <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-semibold leading-tight mb-6 text-white">
                         Exclusivity Meets <br />
@@ -39,7 +39,7 @@ export default function AboutPage() {
                             </h2>
                             <div className="space-y-8 text-lg text-navy/70 leading-relaxed font-medium">
                                 <p>
-                                    At VORA, we welcome individuals who are passionate about delivering exceptional guest experiences. Our mission is to redefine luxury travel — making it personal, distinctive, and unforgettable.
+                                    At ORA, we welcome individuals who are passionate about delivering exceptional guest experiences. Our mission is to redefine luxury travel — making it personal, distinctive, and unforgettable.
                                 </p>
                                 <p>
                                     Discover curated travel stories, destination inspirations, and refined living insights crafted for discerning travelers who seek more than just a place to stay.
@@ -51,12 +51,12 @@ export default function AboutPage() {
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div className="space-y-8 animate-fadeInRight">
                             <div className="rounded-[40px] overflow-hidden shadow-deep border border-border aspect-[4/5] relative group">
-                                <img 
-                                    src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800&q=80" 
-                                    alt="Luxury Villa Interior" 
+                                <img
+                                    src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800&q=80"
+                                    alt="Luxury Villa Interior"
                                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
                                 />
                                 <div className="absolute inset-0 bg-navy/10 group-hover:bg-transparent transition-all duration-700" />
@@ -88,7 +88,7 @@ export default function AboutPage() {
                             {
                                 icon: FaShieldAlt,
                                 title: "Safety & Assurance",
-                                desc: "Every VORA property is verified and maintained to uphold the highest standards of safety, comfort, and discretion."
+                                desc: "Every ORA property is verified and maintained to uphold the highest standards of safety, comfort, and discretion."
                             },
                             {
                                 icon: FaHeart,
@@ -96,8 +96,8 @@ export default function AboutPage() {
                                 desc: "Bookings are confirmed with commitment. Modifications are subject to availability and applicable conditions."
                             }
                         ].map((item, i) => (
-                            <div 
-                                key={i} 
+                            <div
+                                key={i}
                                 className="bg-white p-10 rounded-[32px] border border-border hover:border-saffron/30 hover:shadow-xl transition-all duration-500 group animate-fadeInUp"
                                 style={{ animationDelay: `${0.2 * i}s` }}
                             >

@@ -101,6 +101,20 @@ export default async function AdminDashboard() {
                         </Card>
                     </Link>
 
+                    <Link href="/admin/subscribers">
+                        <Card className="bg-slate-900 border-slate-800 hover:border-fuchsia-500 transition-colors cursor-pointer">
+                            <CardHeader className="flex flex-row items-center space-x-4">
+                                <div className="p-2 bg-fuchsia-500/10 rounded-lg">
+                                    <LayoutDashboard className="h-6 w-6 text-fuchsia-500" />
+                                </div>
+                                <CardTitle>Subscribers</CardTitle>
+                            </CardHeader>
+                            <CardContent>
+                                <p className="text-slate-400">Manage leads and send bulk emails</p>
+                            </CardContent>
+                        </Card>
+                    </Link>
+
                     <Link href="/">
                         <Card className="bg-slate-950 border-slate-800 hover:border-slate-500 transition-colors cursor-pointer border-dashed">
                             <CardHeader className="flex flex-row items-center space-x-4">

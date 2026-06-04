@@ -15,7 +15,7 @@ export async function sendContactEmail(data: ContactData) {
     <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #0a0a0f; color: #f0f6fc; border-radius: 16px; overflow: hidden;">
       <div style="background: linear-gradient(135deg, #c9a55c, #a8843a); padding: 32px; text-align: center;">
         <h1 style="margin: 0; font-size: 28px; color: #0a0a0f;">✉️ New Contact Enquiry</h1>
-        <p style="margin: 8px 0 0; color: #0a0a0f; opacity: 0.8;">VORA</p>
+        <p style="margin: 8px 0 0; color: #0a0a0f; opacity: 0.8;">ORA</p>
       </div>
       <div style="padding: 32px;">
         <h2 style="color: #c9a55c; margin-bottom: 16px;">Contact Details</h2>
@@ -33,7 +33,7 @@ export async function sendContactEmail(data: ContactData) {
     </div>`;
 
   const mailOptions = {
-    from: `"VORA Contact" <${process.env.SMTP_USER || "noreply@vorastays.com"}>`,
+    from: `"ORA Contact" <${process.env.SMTP_USER || "noreply@vorastays.com"}>`,
     to: process.env.BOOKING_EMAIL_TO || process.env.SMTP_USER,
     subject: `Enquiry: ${subject} — ${name}`,
     html: htmlContent,
@@ -77,7 +77,7 @@ export async function sendBookingEmail(bookingData: BookingData) {
     <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #0a0a0f; color: #f0f6fc; border-radius: 16px; overflow: hidden;">
       <div style="background: linear-gradient(135deg, #c9a55c, #a8843a); padding: 32px; text-align: center;">
         <h1 style="margin: 0; font-size: 28px; color: #0a0a0f;">🏡 New Booking Request</h1>
-        <p style="margin: 8px 0 0; color: #0a0a0f; opacity: 0.8;">VORA</p>
+        <p style="margin: 8px 0 0; color: #0a0a0f; opacity: 0.8;">ORA</p>
       </div>
       <div style="padding: 32px;">
         <h2 style="color: #c9a55c; margin-bottom: 16px;">Property</h2>
@@ -99,7 +99,7 @@ export async function sendBookingEmail(bookingData: BookingData) {
     </div>`;
 
   const mailOptions = {
-    from: `"VORA" <${process.env.SMTP_USER || "noreply@vorastays.com"}>`,
+    from: `"ORA" <${process.env.SMTP_USER || "noreply@vorastays.com"}>`,
     to: process.env.BOOKING_EMAIL_TO || process.env.SMTP_USER,
     subject: `New Booking: ${villaName} — ${name}`,
     html: htmlContent,
@@ -113,4 +113,47 @@ export async function sendBookingEmail(bookingData: BookingData) {
 
   const info = await transporter.sendMail(mailOptions);
   return { success: true, messageId: info.messageId };
+}
+
+export async function sendBulkUpdateEmail(emails: string[], subject: string, message: string) {
+  if (emails.length === 0) return { success: false, error: "No subscribers found" };
+
+  const htmlContent = `
+    <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #0a0a0f; color: #f0f6fc; border-radius: 16px; overflow: hidden;">
+      <div style="background: linear-gradient(135deg, #c9a55c, #a8843a); padding: 32px; text-align: center;">
+        <h1 style="margin: 0; font-size: 28px; color: #0a0a0f;">${subject}</h1>
+        <p style="margin: 8px 0 0; color: #0a0a0f; opacity: 0.8;">ORA Stays Update</p>
+      </div>
+      <div style="padding: 32px;">
+        <div style="line-height: 1.6; color: #b0b8c4;">
+          ${message.replace(/\n/g, '<br>')}
+        </div>
+      </div>
+      <div style="background: rgba(255,255,255,0.05); padding: 24px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">
+        <p style="margin: 0; font-size: 12px; color: #6e7681;">
+          You received this email because you subscribed to updates from ORA.<br>
+          <a href="https://vorastays.in" style="color: #c9a55c; text-decoration: none;">Visit our website</a>
+        </p>
+      </div>
+    </div>`;
+
+  const mailOptions = {
+    from: `"ORA Updates" <${process.env.SMTP_USER || "noreply@vorastays.com"}>`,
+    bcc: emails.join(', '), // Send to multiple recipients securely via BCC
+    subject: subject,
+    html: htmlContent,
+  };
+
+  if (!process.env.SMTP_USER) {
+    console.log("📧 Bulk Email (dev mode):", { to: emails.length + " recipients", subject });
+    return { success: true, dev: true };
+  }
+
+  try {
+    const info = await transporter.sendMail(mailOptions);
+    return { success: true, messageId: info.messageId };
+  } catch (error: any) {
+    console.error("Bulk Email Error:", error);
+    return { success: false, error: error.message };
+  }
 }
