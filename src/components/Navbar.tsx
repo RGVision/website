@@ -53,7 +53,7 @@ export default function Navbar() {
                     )}
                     <Link href="/" className="flex items-center gap-3 group">
                         <div className="w-10 h-10 rounded-full overflow-hidden border border-black/5 group-hover:border-saffron transition-all duration-500">
-                            <img src="/DARK ORA LOGO WITH BG.svg" alt="ORA" className="w-full h-full object-cover" />
+                            <img src="/DARK VORA LOGO WITH BG.svg" alt="ORA" className="w-full h-full object-cover" />
                         </div>
                         <div className="flex flex-col justify-center">
                             <span className={`text-2xl font-brand uppercase tracking-widest transition-colors duration-300 leading-none ${isScrolled ? "text-navy" : "text-white"}`}>
@@ -101,7 +101,7 @@ export default function Navbar() {
                             <SheetHeader>
                                 <SheetTitle className="flex items-center gap-3">
                                     <div className="w-8 h-8 rounded-full overflow-hidden border border-saffron/30">
-                                        <img src="/logo.png" alt="ORA" className="w-full h-full object-cover" />
+                                        <img src="/DARK VORA LOGO WITH BG.svg" alt="ORA" className="w-full h-full object-cover" />
                                     </div>
                                     <div className="flex flex-col items-start justify-center">
                                         <span className="text-xl font-brand uppercase tracking-widest text-navy leading-none">

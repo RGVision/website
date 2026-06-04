@@ -35,8 +35,8 @@ export const metadata: Metadata = {
         images: ["/premium_hero_villa_1_1773935436305.png"],
     },
     icons: {
-        icon: "/DARK ORA LOGO WITH BG.svg",
-        apple: "/DARK ORA LOGO WITH BG.svg",
+        icon: "/DARK VORA LOGO WITH BG.svg",
+        apple: "/DARK VORA LOGO WITH BG.svg",
     },
 };
 

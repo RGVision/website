@@ -49,7 +49,7 @@ export default function Footer() {
                         <Link href="/" className="flex items-center gap-4 mb-8 group">
                             <div className="w-12 h-12 rounded-full overflow-hidden border border-white/10 p-0.5 group-hover:border-saffron transition-all duration-500">
                                 <div className="w-full h-full rounded-full overflow-hidden">
-                                    <img src="/DARK ORA LOGO WITH BG.svg" alt="ORA" className="w-full h-full object-cover" />
+                                    <img src="/DARK VORA LOGO WITH BG.svg" alt="ORA" className="w-full h-full object-cover" />
                                 </div>
                             </div>
                             <div className="flex flex-col justify-center">
