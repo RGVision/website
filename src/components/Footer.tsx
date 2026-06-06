@@ -13,30 +13,30 @@ const columns = [
         title: "DISCOVERY",
         links: [
             { label: "Our Collection", href: "/villas" },
-            { label: "Experiences", href: "#" },
-            { label: "Philosophy", href: "/about" },
-            { label: "Careers", href: "#", desc: "Shaping premium hospitality." },
-            { label: "Journal", href: "#", desc: "Destination inspirations." }
+            // { label: "Experiences", href: "#" },
+            { label: "Philosophy", href: "/about" }
+            // { label: "Careers", href: "#", desc: "Shaping premium hospitality." },
+            // { label: "Journal", href: "#", desc: "Destination inspirations." }
         ]
     },
     {
         title: "SUPPORT",
         links: [
-            { label: "Concierge", href: "#", desc: "Assisting every step." },
-            { label: "Safety & Assurance", href: "#", desc: "Verified standards." },
-            { label: "Cancellations", href: "#", desc: "Subject to availability." },
+            // { label: "Concierge", href: "#", desc: "Assisting every step." },
+            // { label: "Safety & Assurance", href: "#", desc: "Verified standards." },
+            // { label: "Cancellations", href: "#", desc: "Subject to availability." },
             { label: "Terms of Service", href: "/terms", desc: "Ensuring transparency." }
         ]
     },
-    {
-        title: "HOSTING",
-        links: [
-            { label: "List Your Villa", href: "#", desc: "Partner with us." },
-            { label: "Host Privileges", href: "#", desc: "Gain expert support." },
-            { label: "Community", href: "#", desc: "Like-minded hosts." },
-            { label: "Partnerships", href: "#", desc: "Collaborate with us." }
-        ]
-    },
+    // {
+    //     title: "HOSTING",
+    //     links: [
+    //         { label: "List Your Villa", href: "#", desc: "Partner with us." },
+    //         { label: "Host Privileges", href: "#", desc: "Gain expert support." },
+    //         { label: "Community", href: "#", desc: "Like-minded hosts." },
+    //         { label: "Partnerships", href: "#", desc: "Collaborate with us." }
+    //     ]
+    // },
 ];
 
 export default function Footer() {
@@ -88,11 +88,11 @@ export default function Footer() {
                                             <span className="text-[13px] font-medium text-white/50 group-hover:text-white transition-all duration-300">
                                                 {link.label}
                                             </span>
-                                            {link.desc && (
+                                            {/* {link.desc && (
                                                 <span className="block text-[9px] text-white/20 font-medium tracking-tight mt-1 group-hover:text-white/30 transition-all">
                                                     {link.desc}
                                                 </span>
-                                            )}
+                                            )} */}
                                         </Link>
                                     </li>
                                 ))}
@@ -132,13 +132,13 @@ export default function Footer() {
                         © 2026 VORA. CRAFTED FOR EXCEPTIONAL STAYS.
                     </div>
                     <div className="flex gap-10">
-                        <Link href="#" className="text-[10px] font-black uppercase tracking-[0.3em] text-white/20 hover:text-white transition-colors">
+                        {/* <Link href="#" className="text-[10px] font-black uppercase tracking-[0.3em] text-white/20 hover:text-white transition-colors">
                             Privacy policy
-                        </Link>
+                        </Link> */}
                         <Link href="/terms" className="text-[10px] font-black uppercase tracking-[0.3em] text-white/20 hover:text-white transition-colors">
                             Terms of service
                         </Link>
-                        <Link href="https://www.vorastays.in/sitemap.xml" className="text-[10px] font-black uppercase tracking-[0.3em] text-white/20 hover:text-white transition-colors">
+                        <Link href="https://www.vorastays.in/sitemap.xml" className="text-[10px] font-black uppercase tracking-[0.3em] text-white/20 hover:text-white transition-colors hidden">
                             Sitemap
                         </Link>
                     </div>
