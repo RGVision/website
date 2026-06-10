@@ -57,7 +57,7 @@ export default function Navbar() {
                         </div>
                         <div className="flex flex-col justify-center">
                             <span className={`text-2xl font-brand uppercase tracking-widest transition-colors duration-300 leading-none ${isScrolled ? "text-navy" : "text-white"}`}>
-                                VORA
+                                ORA
                             </span>
                             <span className={`text-[7px] uppercase tracking-[0.2em] ${isScrolled ? "text-navy" : "text-white"} font-bold mt-0.5`}>
                                 Exclusive <span className="text-saffron">#Private </span>Stays
@@ -105,7 +105,7 @@ export default function Navbar() {
                                     </div>
                                     <div className="flex flex-col items-start justify-center">
                                         <span className="text-xl font-brand uppercase tracking-widest text-navy leading-none">
-                                            VORA
+                                            ORA
                                         </span>
                                         <span className="text-[6px] uppercase tracking-[0.2em] text-white font-bold mt-0.5">
                                             Exclusive <span className="text-saffron">#Private </span> Stays

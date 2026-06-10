@@ -65,7 +65,7 @@ export default function InspirationCarousel({ testimonials }: Props) {
                         Stories from our <span className="text-transparent bg-clip-text bg-gradient-to-r from-saffron to-amber-500">Guests</span>
                     </h2>
                     <p className="mt-4 text-navy/70 text-base md:text-lg">
-                        Discover the unforgettable experiences and cherished memories captured by our guests during their luxurious stays with VORA.
+                        Discover the unforgettable experiences and cherished memories captured by our guests during their luxurious stays with ORA.
                     </p>
                 </div>
 
@@ -74,8 +74,8 @@ export default function InspirationCarousel({ testimonials }: Props) {
                         onClick={() => scroll("left")}
                         disabled={!canScrollLeft}
                         className={`w-12 h-12 rounded-full border border-navy/10 shadow-sm flex items-center justify-center transition-all duration-300 group ${canScrollLeft
-                                ? "bg-white text-navy hover:bg-navy hover:text-white hover:border-navy focus:outline-none active:scale-95"
-                                : "bg-navy/5 text-navy/30 cursor-not-allowed"
+                            ? "bg-white text-navy hover:bg-navy hover:text-white hover:border-navy focus:outline-none active:scale-95"
+                            : "bg-navy/5 text-navy/30 cursor-not-allowed"
                             }`}
                         aria-label="Previous review"
                     >
@@ -85,8 +85,8 @@ export default function InspirationCarousel({ testimonials }: Props) {
                         onClick={() => scroll("right")}
                         disabled={!canScrollRight}
                         className={`w-12 h-12 rounded-full border border-navy/10 shadow-sm flex items-center justify-center transition-all duration-300 group ${canScrollRight
-                                ? "bg-white text-navy hover:bg-navy hover:text-white hover:border-navy focus:outline-none active:scale-95"
-                                : "bg-navy/5 text-navy/30 cursor-not-allowed"
+                            ? "bg-white text-navy hover:bg-navy hover:text-white hover:border-navy focus:outline-none active:scale-95"
+                            : "bg-navy/5 text-navy/30 cursor-not-allowed"
                             }`}
                         aria-label="Next review"
                     >

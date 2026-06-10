@@ -6,14 +6,14 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://vorastays.in"),
-    title: "VORA – Where Exclusivity Meets Timeless Elegance",
-    description: "Experience the art of exclusive travel with VORA. Curated luxury villas and heritage escapes across India, redefining luxury travel with unparalleled privacy and elegance.",
-    keywords: "VORA, luxury villas, villa booking, premium stays, private villas, beach villas, beachfront villas, private pool villas, luxury villa rentals, vacation villas, farmhouse booking, weekend getaway Chennai, luxury stay Chennai, ECR villas, East Coast Road villas, Kovalam beach villas, Mahabalipuram villas, Pondicherry villas, Tamil Nadu luxury stays, sea view villas, family vacation villas, group stay villas, corporate retreat villas, romantic villa stays, holiday homes Chennai, exclusive escapes, Chennai, ECR, Kovalam, Mahabalipuram, Pondicherry, Tamil Nadu, India travel",
+    title: "ORA – Where Exclusivity Meets Timeless Elegance",
+    description: "Experience the art of exclusive travel with ORA. Curated luxury villas and heritage escapes across India, redefining luxury travel with unparalleled privacy and elegance.",
+    keywords: "ORA, luxury villas, villa booking, premium stays, private villas, beach villas, beachfront villas, private pool villas, luxury villa rentals, vacation villas, farmhouse booking, weekend getaway Chennai, luxury stay Chennai, ECR villas, East Coast Road villas, Kovalam beach villas, Mahabalipuram villas, Pondicherry villas, Tamil Nadu luxury stays, sea view villas, family vacation villas, group stay villas, corporate retreat villas, romantic villa stays, holiday homes Chennai, exclusive escapes, Chennai, ECR, Kovalam, Mahabalipuram, Pondicherry, Tamil Nadu, India travel",
     alternates: {
         canonical: "/",
     },
     openGraph: {
-        title: "VORA – Where Exclusivity Meets Timeless Elegance",
+        title: "ORA – Where Exclusivity Meets Timeless Elegance",
         description: "Experience the art of exclusive travel. Curated luxury villas and heritage escapes across India.",
         type: "website",
         url: "https://vorastays.in",
@@ -22,15 +22,15 @@ export const metadata: Metadata = {
                 url: "/premium_hero_villa_1_1773935436305.png",
                 width: 1200,
                 height: 630,
-                alt: "VORA - Luxury Villa",
+                alt: "ORA - Luxury Villa",
             },
         ],
         locale: "en_IN",
-        siteName: "VORA",
+        siteName: "ORA",
     },
     twitter: {
         card: "summary_large_image",
-        title: "VORA – Exclusive Luxury Escapes",
+        title: "ORA – Exclusive Luxury Escapes",
         description: "Curated luxury villas and heritage escapes across India.",
         images: ["/premium_hero_villa_1_1773935436305.png"],
     },
@@ -53,7 +53,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                         __html: JSON.stringify({
                             "@context": "https://schema.org",
                             "@type": "LodgingBusiness",
-                            "name": "VORA",
+                            "name": "ORA",
                             "description": "Exclusivity Meets Timeless Elegance. Curated luxury villas and heritage escapes across India.",
                             "url": "https://vorastays.in",
                             "telephone": "+919384870117",

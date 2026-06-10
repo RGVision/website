@@ -54,7 +54,7 @@ export default function Footer() {
                             </div>
                             <div className="flex flex-col justify-center">
                                 <span className="text-2xl font-brand uppercase tracking-widest leading-none text-white">
-                                    VORA
+                                    ORA
                                 </span>
                                 <span className="text-[7px] uppercase tracking-[0.2em] text-white font-bold mt-1">
                                     Exclusive <span className="text-saffron">#Private </span> Stays
@@ -129,7 +129,7 @@ export default function Footer() {
 
                 <div className="pt-12 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-8">
                     <div className="text-[10px] font-black uppercase tracking-[0.3em] text-white/20">
-                        © 2026 VORA. CRAFTED FOR EXCEPTIONAL STAYS.
+                        © 2026 ORA. CRAFTED FOR EXCEPTIONAL STAYS.
                     </div>
                     <div className="flex gap-10">
                         {/* <Link href="#" className="text-[10px] font-black uppercase tracking-[0.3em] text-white/20 hover:text-white transition-colors">
